@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log-in</title>
+    <link rel="stylesheet" type="text/css" href="General/general_estilos.css">
+    <link rel="stylesheet" type="text/css" href="Login/estilos.css">
+    <link rel="stylesheet" type="text/css" href="Login/autenticar.js">
+    <script type="text/javascript" scr="login_autenticar.js"></script>
+</head>
+
+<body>
+  <header style="height: 200px;">
+    <h1 id="TITULO">SIGN IN</h1>
+
+    <ul class="UL_H"style="margin-left: -260px;">
+      <li>Calcula tu Sueldo</li>
+      <li>Confecciona tu Curriculum</li>
+      <li> Verifica tu sueldo</li>
+    </ul>
+
+    <ul class="UL_H" style="margin-left: 0px;">
+      <li>Conoce de las condiciones de tu Sueldo</li>
+      <li>Calcula tu indemnización</li>
+      <li>Calcula tu Aguinaldo</li>
+    </ul>
+
+    <img src="../img/Calculadora.png" class="LOGOS_HEADER" title="logo" style="height: 150px;width: 180px;">
+
+  </header>
+
+  <div id="CONTENDOR">
+    <form id="CONTENDOR_Form">  
+      <table>
+        <tr>
+          <h1> Inicio de Seción</h1>
+          <td>
+            <label for="USUA">Usuario</label>
+            <input type="text" id="USUA">
+            <label for="CONTRA">Contraseña</label>
+            <input type="password" id="CONTRA"><br><br>
+            <button type="button" onclick="LOGIN()">Ingresar</button>
+          </td>
+        </tr>
+      </table>
+    </form>
+  </div>
+</body>
+</html>
