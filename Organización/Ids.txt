@@ -37,3 +37,4 @@ CAMCOS=Campo de cosas
 GANAN=Ganacia
 PORC1=Porcentaje
 DESC1=Descuento
+ 

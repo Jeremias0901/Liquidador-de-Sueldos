@@ -62,3 +62,4 @@ Campo de cosas de ganancia o descuento desconocidos (max. 10)
 	 Ganancia. Plata fija.
 	 Descuento. Plata fija.
 	 Porcentaje. Porcentaje a sacar de Sueldo Bruto.
+ 
