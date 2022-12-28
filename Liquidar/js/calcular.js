@@ -1,212 +1,231 @@
-var CAMAPOR;
-var DESCO;
-var PORCO;
-var CAMCOS;
-var GANAN;
-var PORC1;
-var DESC1;
-var nomb;
-var SB;
-var APELL;
-var DNI;
-var CUIL;
-var PORC;
-var TIT;
-var VDT;
-var HAB;
-var VAC;
-var PRES;
-var VIAT;
-var IED;
-var DPD;
-var APOR;
-var OBSOC;
-var PAMI;
-var SIND;
-var FAC;
-var ASIGFAC;
-var ART;
-var ASIGFANPRE;
-var SEGVID = 0.0;
-var HSXD;
-var ANT;
-var JUB;
-var HSEX50 = 0.0;
-var HSEX100 = 0.0;
-var HSEX50R = 0.0;
-var HSEX100R = 0.0;
-var INAS = 0.0;
-var INASR = 0.0;
-var MAL;
-var MALR = 0.0;
-var JUBR = 0.0;
-var PAMIR;
-var SINDR;
-var OBSOCR;
-var FACR;
-var ARTER = 0.0;
-var SEGVIDR = 0.0;
-var VIATR;
-function DesplegarRecibo() {
-	/*ACTIVAR FORM OUTPUT*/
-	nomb = document.getElementById("NOMBRE").value;
-	SB = parseFloat(document.getElementById("SB").value);
-	APELL = document.getElementById("APELLIDO").value;
-	DNI = parseFloat(document.getElementById("DNI").value);
-	MAL = document.getElementById("MAL").value;
-	CUIL = parseFloat(document.getElementById("CUIL").value);
-	SB = parseFloat(document.getElementById("SB").value);
-	ANT = parseFloat(document.getElementById("ANT").value);
-	PORC = parseFloat(document.getElementById("PORAN").value);
-	TIT = document.getElementById("TIT").value;
-	VDT = parseFloat(document.getElementById("VDT").value);
-	HAB = parseFloat(document.getElementById("HAB"));
-	HSXD = parseFloat(document.getElementById("HSXD").value);
-	HSEX100 = parseFloat(document.getElementById("HSEX100").value);
-	HSEX50 = parseFloat(document.getElementById("HSEX50").value);
-	VAC = parseFloat(document.getElementById("VAC").value);
-	INAS = parseFloat(document.getElementById("INAS").value);
-	PRES = parseFloat(document.getElementById("PRES").value);
-	VIAT = parseFloat(document.getElementById("VIAT").value);
-	IED = parseFloat(document.getElementById("IED"));
-	DPD = parseFloat(document.getElementById("DPD"));
-	APOR = parseFloat(document.getElementById("APOR"));
-	JUB = parseFloat(document.getElementById("JUB").value);
-	OBSOC = parseFloat(document.getElementById("OBSOC").value);
-	PAMI = parseFloat(document.getElementById("PAMI").value);
-	SIND = parseFloat(document.getElementById("SIND").value);
-	FAC = parseFloat(document.getElementById("FAC").value);
-	ASIGFAC = parseFloat(document.getElementById("ASIGFAC"));
-	SEGVID = parseFloat(document.getElementById("SEGVID").value);
-	ART = parseFloat(document.getElementById("ART").value);
-	ASIGFANPRE = parseFloat(document.getElementById("ASIGFANPRE"));
-	FONNACEMP = parseFloat(document.getElementById("FONNACEMP"));
-	CAMAPOR = parseFloat(document.getElementById("CAMAPOR"));
-	DESCO = parseFloat(document.getElementById("DESCO"));
-	PORCO = parseFloat(document.getElementById("PORCO"));
-	CAMCOS = parseFloat(document.getElementById("CAMCOS"));
-	GANAN = parseFloat(document.getElementById("GANAN"));
-	PORC1 = parseFloat(document.getElementById("PORC1"));
-	DESC1 = parseFloat(document.getElementById("DESC1"));
-	var ANTR;
-	var ANTRR;
-	var SBNH;
-	var SBRU = 0.0;
-	var JUB;
-	var PAMI;
-	var OS;
-	var SIND;
-	var FAC;
-	var VIAT;
-	var SNET;
-	var TOTAP;
-	var SNETAC;
-	var HSD;
-	Validar();
-	ANTR = 2021 - ANT;
-	ANTR = ANTR * PORC;
-	ANTRR = (SB * ANTR) / 100;
-	SBNH = SB + ANTRR + VDT;
-	HSEX50R = (SBNH / 200 + SBNH / 200 / 2) * HSEX50;
-	HSEX100R = (SBNH / 200 + SBNH / 200) * HSEX100;
-	switch (MAL) {
-		case "Enero":
-			MALR = 25;
-			break;
-		case "Febrero":
-			MALR = 22;
-			break;
-		case "Marzo":
-			MALR = 24;
-			break;
-		case "Abril":
-			MALR = 24;
-			break;
-		case "Mayo":
-			MALR = 21;
-			break;
-		case "Junio":
-			MALR = 24;
-			break;
-		case "Julio":
-			MALR = 25;
-			break;
-		case "Agosto":
-			MALR = 24;
-			break;
-		case "Septiembre":
-			MALR = 23;
-			break;
-		case "Octubre":
-			MALR = 24;
-			break;
-		case "Noviembre":
-			MALR = 24;
-			break;
-		case "Diciembre":
-			MALR = 24;
-			break;
-	}
-	INASR = (SBNH * INAS) / MALR;
-	var cp = 1;
-	if (INAS > 0) {
-		cp = 0;
-		PRES = PRES * 0.0;
-	}
-	SBRU = SBNH + PRES + HSEX50R + HSEX100R - INASR;
-	JUBR = (SBRU * JUB) / 100.0;
-	PAMIR = (SBRU * PAMI) / 100;
-	OBSOCR = (SBRU * OBSOC) / 100;
-	SINDR = (SBRU * SIND) / 100;
-	FACR = (SBRU * FAC) / 100;
-	ARTER = (SBRU * ART) / 100;
-	SEGVIDR = (SBRU * SEGVID) / 100;
-	TOTAP = JUBR + PAMIR + OBSOCR + SINDR + FACR + SEGVIDR + ARTER;
-	SNET = SBRU - TOTAP;
-	VIATR = VIAT * MALR;
-	SNETAC = SNET + VIATR;
-	HSD = ANTRR + VDT + PRES + HSEX50R + HSEX100R + VIATR;
-	document.getElementById("NOMBRE_OU").value = nomb;
-	document.getElementById("APELLIDO_OU").value = APELL;
-	document.getElementById("DNI_OU").value = DNI;
-	document.getElementById("CUIL_OU").value = CUIL;
-	document.getElementById("ANT_OU").value = ANT;
-	document.getElementById("SB_OU").value = SB;
-	document.getElementById("JUB_OU").value = JUB;
-	document.getElementById("JUBR_OU").value = JUBR;
-	document.getElementById("PAMI_OU").value = PAMI;
-	document.getElementById("PAMIR_OU").value = PAMIR;
-	document.getElementById("OBSOC_OU").value = OBSOC;
-	document.getElementById("OBSOCR_OU").value = OBSOCR;
-	document.getElementById("SIND_OU").value = SIND;
-	document.getElementById("SINDR_OU").value = SINDR;
-	document.getElementById("FAC_OU").value = FAC;
-	document.getElementById("FACR_OU").value = FACR;
-	document.getElementById("ANT_OU").value = ANTR;
-	document.getElementById("ANTR_OU").value = ANTRR;
-	document.getElementById("VDT_OU").value = 1;
-	document.getElementById("VDTR_OU").value = VDT;
-	document.getElementById("PRES_OU").value = cp;
-	document.getElementById("PRESR_OU").value = PRES;
-	document.getElementById("HSEX50_OU").value = HSEX50;
-	document.getElementById("HSEX100_OU").value = HSEX100;
-	document.getElementById("HSEX50R_OU").value = HSEX50R;
-	document.getElementById("HSEX100R_OU").value = HSEX100R;
-	document.getElementById("VIAT_OU").value = 1;
-	document.getElementById("VIATR_OU").value = VIATR;
-	document.getElementById("INAS_OU").value = INAS;
-	document.getElementById("INASR_OU").value = INASR;
-	document.getElementById("SBRU_OU").value = SBRU;
-	document.getElementById("SNETAC_OU").value = SNETAC;
-	document.getElementById("APOR_OU").value = TOTAP;
-	document.getElementById("SEGVID_OU").value = SEGVID;
-	document.getElementById("SEGVIDR_OU").value = SEGVIDR;
-	document.getElementById("HSD_OU").value = HSD;
-}
-function Validar() {
-	if (SB < 1 || ANT > 2021 || MAL == "Seleccionar" || HSXD > 10) {
-		alert("Complete correctamente todos los campos.");
-	} else {
-		document.getElementById("OUTPUT").className = "Activar";
-	}
+
+document.querySelector('.formulario').addEventListener("submit", (e) => {
+  const fecha = new Date();
+  const meses = [ // 2021
+  /**
+   * NOTE: es posible utilizar la api: https://api.workingdays.org/1.2/api-documentation.php
+   * para recuperar los dias laborales automaticamente
+   */
+  {nombre: "enero", diasHabiles: 25},
+  {nombre: "febrero", diasHabiles: 22},
+  {nombre: "marzo", diasHabiles: 24},
+  {nombre: "abril", diasHabiles: 24},
+  {nombre: "mayo", diasHabiles: 21},
+  {nombre: "junio", diasHabiles: 24},
+  {nombre: "julio", diasHabiles: 25},
+  {nombre: "agosto", diasHabiles: 24},
+  {nombre: "septiembre", diasHabiles: 23},
+  {nombre: "octubre", diasHabiles: 24},
+  {nombre: "noviembre", diasHabiles: 24},
+  {nombre: "diciembre", diasHabiles: 24}
+  ];
+  // diasHabiles = meses.map( ({diasHabiles}) => diasHabiles );
+
+  var persona = {
+  name: document.getElementById("name").value,
+  surname: document.getElementById("surname").value,
+  dni: parseFloat(document.getElementById("dni").value),
+  cuil: parseFloat(document.getElementById("cuil").value)
+  }
+  var ingreso = {
+    sueldoBasico: parseFloat(document.getElementById("sueldoBasico").value),
+    antiguedad: {
+      procentajePorAnio: parseFloat(document.getElementById("porcentajeAnio").value)
+    },
+    anioActual: fecha.getUTCFullYear(),
+    fechaIngresoEmpresa: parseFloat(document.getElementById("fechaIngresoEmpresa").value),
+    titulo: {
+      nombre: document.getElementById("tituloNombre").value,
+      plata: parseFloat(document.getElementById("tituloValor").value),
+    },
+    presentismo: parseFloat(document.getElementById("presentismo").value),
+    mesLiquidar: document.getElementById("mesLiquidar").value,
+    hora: {
+      normalCantidad: parseFloat(document.getElementById("horasDia").value),
+      extra: {
+      cincuentaCantidad: parseFloat(document.getElementById("horasExtra50").value),
+      cienCantidad: parseFloat(document.getElementById("horasExtra100").value)
+      }
+    },
+    // vacacionesDias: parseFloat(document.getElementById("vacaciones").value),
+    inasistencias: parseFloat(document.getElementById("inasistencias").value),
+    viaticos: parseFloat(document.getElementById("viaticos").value),
+    aportes: [
+      { nombre: "jubilacion", porcentaje: parseFloat(document.getElementById("jubilacion").value) },
+      { nombre: "obraSocial", porcentaje: parseFloat(document.getElementById("obraSocial").value)},
+      { nombre: "pami", porcentaje: parseFloat(document.getElementById("pami").value)},
+      { nombre: "sindicato", porcentaje: parseFloat(document.getElementById("sindicato").value)}
+    ],
+    asignaciones: {
+      familiarCargo: parseFloat(document.getElementById("familiarCargo").value)/* ,
+      asignacionFamiliarPrenatal: parseFloat(document.getElementById("ASIGFANPRE").value),
+      asignacionFamiliarCargo: parseFloat(document.getElementById("ASIGFAC").value), */
+    }
+  }
+
+  var diasHabiles;
+  var validated;
+  var totalAportes;
+  var horasExtra;
+  var antiguedad;
+  var inasistencias;
+  var sueldoBruto;
+  var viaticos;
+
+  var mesElegido;
+  var diasHabilesHoy;
+  var hora;
+  var horaExtra100;
+  var horaExtra50;
+  var aportes;
+  var sueldoNeto;
+
+  e.preventDefault(); // para que no se recargue la pagina
+  validated = validate();
+
+  if(!validated) return;
+
+  totalAportes = ingreso.aportes.reduce((ac, a) => { ac + a });
+  horasExtra = {
+  cincuenta: {  },
+  cien: {  }
+  };
+
+  horasExtra.cien.cantidad = ingreso.hora.extra.cienCantidad;
+  horasExtra.cincuenta.cantidad = ingreso.hora.extra.cincuentaCantidad;
+
+  antiguedad = {
+  anios: ingreso.anioActual - ingreso.fechaIngresoEmpresa,
+  porcentaje: null,
+  valor: null
+  }
+
+  if (document.getElementById("mesLiquidar").value == "0") {
+  alert('es igual a cero' + ingreso.mesLiquidar);
+  }else
+  alert('NOOOOOOOOOOOOO es igual a cero' + ingreso.mesLiquidar);
+
+  mesElegido = meses.filter(mes => mes.nombre === document.getElementById("mesLiquidar").value)[0];
+  diasHabilesHoy = mesElegido.diasHabiles;
+  const horasTotalesDelMes = diasHabilesHoy * ingreso.hora.normalCantidad;
+
+  hora = {
+  normal: {
+    valor: null
+  }
+  }
+
+  hora.normal.valor = ingreso.sueldoBasico / (diasHabilesHoy * ingreso.hora.normalCantidad);
+
+  antiguedad.porcentaje = antiguedad.anios * ingreso.antiguedad.procentajePorAnio;
+  antiguedad.valor = (sueldoBasico *  ingreso.antiguedad.procentajePorAnio) / 100;
+  const sueldoBasicoNormalHabitual = sueldoBasico + antiguedad.valor + ingreso.titulo.valor;
+
+  horaExtra100 = {
+  valor: hora.normal.valor * 1.5,
+  total: null
+  }
+
+  horaExtra100.total = horaExtra100.valor * ingreso.hora.extra.cincuentaCantidad
+
+  // horasExtra50Valor = (sueldoBasicoNormalHabitual / horasTotalesDelMes + sueldoBasicoNormalHabitual / horasTotalesDelMes / 2) * input.horasExtra50;
+  // HSEX100R = (sueldoBasicoNormalHabitual / horasTotalesDelMes + sueldoBasicoNormalHabitual / horasTotalesDelMes) * horasExtra100;
+
+  inasistencias = (sueldoBasicoNormalHabitual * ingreso.inasistencias) / diasHabilesHoy;
+
+  var presentismo;
+
+  if (ingreso.inasistencias > 0) {
+    presentismo = presentismo * 0.0;
+  }
+
+  horaExtra50 = {
+  valor: hora.normal.valor * 1.5,
+  total: null
+  }
+
+  horaExtra50.total = horaExtra50.valor * ingreso.hora.extra.cincuentaCantidad;
+  sueldoBruto = sueldoBasicoNormalHabitual + presentismo + horaExtra50.total + horaExtra100.total - inasistencias;
+
+  aportes = ingreso.aportes.map( aporte => {
+  return { nombre: aporte.nombre, valor: (sueldoBruto * aporte.porcentaje) / 100 };
+  });
+
+  sueldoNeto = sueldoBruto - totalAportes;
+  viaticos = ingreso.viaticos * diasHabilesHoy;
+  sueldoNetoCobrar = sueldoNeto + viaticos;
+  ingreso.hora.normalCantidad = antiguedad.valor + ingreso.titulo.valor + ingreso.presentismo + horaExtra50.total + horaExtra100.total + viaticos;
+
+  document.getElementById("output__name").value = ingreso.name;
+  document.getElementById("output__surname").value = ingreso.surname;
+  document.getElementById("output__dni").value = ingreso.dni;
+  document.getElementById("output__cuil").value = document.getElementById("cuil").value;
+
+  document.getElementById("output__antiguedad").value = antiguedad;
+
+  document.getElementById("output__sueldoBasico").value = sueldoBasico;
+
+  document.getElementById("output__jubilacion").value = jubilacion;
+  document.getElementById("output__jubilacionR").value = jubilacion;
+
+  document.getElementById("output__pami").value = ingreso.aportes[2].porcentaje;
+  document.getElementById("output__pamiR").value = aportes[2].valor;
+
+  document.getElementById("output__obraSocial").value = ingreso.obraSocial;
+  document.getElementById("output__obraSocialR").value = aportes[1].valor;
+
+  document.getElementById("output__sindicato").value = sindicato;
+  document.getElementById("output__sindicatoR").value = aportes[3].valor;
+
+  /* document.getElementById("output__familiarCargo").value = familiarCargo;
+  document.getElementById("output__familiarCargoR").value = familiarCargoR; */
+
+  document.getElementById("output__antiguedad").value = antiguedad;
+  document.getElementById("output__antiguedadR").value = antiguedad.valor;
+
+  document.getElementById("output__tituloValor").value = ingreso.titulo.nombre;
+  document.getElementById("output__tituloValorR").value = 1;
+
+  document.getElementById("output__presentismo").value = ingreso.presentismo;
+  document.getElementById("output__presentismoR").value = presentismo;
+
+  document.getElementById("output__fecha").value = ingreso.anioActual.toString();
+
+  document.getElementById("output__horasExtra50").value = horasExtra50.cantidad;
+  document.getElementById("output__horasExtra50R").value = horasExtra50.plata;
+  document.getElementById("output__horasExtra100").value = horasExtra100.cantidad;
+  document.getElementById("output__horasExtra100R").value = horasExtra100.plata;
+
+  document.getElementById("output__viaticos").value = ingreso.viaticos;
+  document.getElementById("output__viaticosR").value = viaticos;
+
+  document.getElementById("output__inasistencias").value = ingreso.inasistencias;
+  document.getElementById("output__inasistenciasR").value = inasistencias;
+  document.getElementById("output__sueldoBruto").value = sueldoBruto;
+
+  document.getElementById("output__sueldoNetoCobrar").value = sueldoNeto;
+
+  document.getElementById("output__aportes").value = totalAportes;
+
+  document.getElementById("output__horasDia").value = ingreso.hora.normalCantidad;
+});
+
+function validate() {
+  /**
+   * TODO: Desarrollar esta funcion.
+   * NOTE: usar expresiones regulares para cada datos para validar los datos.
+   *       objeto expresiones preliminar.
+   */
+
+  const expresiones = {
+  nombre: /^[a-zA-ZñÑáéíóúÁÉÍÓÚüÜ]{2,}$/,
+  plata: /(^[0-9]{1,3}\.[0-9]{3},[0-9]{2}$|^[0-9]{1,3}\.[0-9]{3}$|^[0-9]{1,3}$)/
+  }
+
+  validated = false;
+
+
+
+  return true;  // provisional para tests
+  // return validated;
 }
