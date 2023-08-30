@@ -12,10 +12,10 @@
 }
 
 body {
-	display: grid;
-	grid-template-rows: repeat(3, auto);
-	gap: 30px;
 	background: rgb(0, 0, 49);
+  font-family: Arial, Helvetica, sans-serif;
+  word-spacing: 2px;
+  letter-spacing: 1px;
 }
 
 body::-webkit-scrollbar {
@@ -36,18 +36,21 @@ body::-webkit-scrollbar-thumb {
 	box-shadow: rgba(0, 0, 0, 0.432) 10px 10px 10px;
 }
 
+.contenedor3d{
+  border: black solid;
+  padding: 20px 20px 10px 20px;
+  margin: 20px 20px 0px 20px;
+  background: var(--colorPrimario);
+  color: var(--colorTerciario);
+}
+
 .header {
-	display: grid;
+  display: grid;
+  border-radius: 30px 30px 0px 0px;
 	grid-template-rows: auto auto;
 	gap: 20px;
 	width: auto;
 	height: auto;
-	padding: 20px;
-	margin: 20px;
-	color: var(--colorTerciario);
-	background: var(--colorPrimario);
-	border: black solid;
-	border-radius: 0px 0px 30px 30px;
 }
 
 .header__contenido {
@@ -128,11 +131,16 @@ body::-webkit-scrollbar-thumb {
 	margin-left: 50px;
 	display: flex;
 	flex-direction: row;
+  text-decoration: none;
+}
+.laci-menu:hover {
+  border-bottom: solid rgb(0, 0, 88) 2px;
 }
 
 .laci-menu__letra-normal {
 	font-family: "Inconsolata", monospace;
 	font-size: var(--tamanioFuente-menu);
+  color: white;
 }
 
 .laci-menu__letra-resaltante {
@@ -146,6 +154,7 @@ body::-webkit-scrollbar-thumb {
 	display: flex;
 	flex-direction: column;
 	padding: 5px;
+  height: 75px;
 	background: var(--colorSecundario);
 	border-radius: 30px;
 	border: var(--colorTerciario) solid 1px;
