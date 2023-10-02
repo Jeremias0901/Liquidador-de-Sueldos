@@ -1,245 +1,78 @@
 <!DOCTYPE html>
-<html lang="en">
-	<head>
-	  <meta charset="UTF-8">
-	  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-	  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	  <link rel="preconnect" href="https://fonts.googleapis.com">
-	  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	  <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@700&display=swap" rel="stylesheet">
-
-	  <title>Aguinaldo</title>
-	  <link rel="stylesheet" type="text/css" href="../General/estilos.css">
-	  <link rel="stylesheet" type="text/css" href="css/estilos.css">
-	  <script                                scr ="js/calcular.js"></script>
-	  <link rel="shortcut icon" href="../img/logo.jpeg">
+<html lang="es">
+<head>
+    <script src="../recursosVista/loadComponents.js"></script>
+    <title>Aguinaldo</title>
 </head>
 <body>
-	  <header class="header sombra">
+    <header></header>
+    <nav></nav>
 
-	    <div class="header__contenido">
-	      <div class="identidad">
-	        <h1 class="identidad__titulo"> CALCULAR AGUINALDO </h1>
-
-	        <div class="ofrecimientos">
-	          <ul class="ofrecimientos__lista">
-	            <li class="ofrecimientos__elemento"> Calcula tu Sueldo          </li>
-	            <li class="ofrecimientos__elemento"> Confecciona tu Curriculum  </li>
-	            <li class="ofrecimientos__elemento"> Verifica tu sueldo </li>
-          </ul>
-
-	          <ul class="ofrecimientos__lista">
-	            <li class="ofrecimientos__elemento"> Conoce de las condiciones de tu Sueldo </li>
-	            <li class="ofrecimientos__elemento"> Calcula tu indemnización        </li>
-	            <li class="ofrecimientos__elemento"> Calcula tu Aguinaldo                   </li>
-          </ul>
+    <div class="contenedor">
+        <div class="contenedor__aside" id="aside__left">
         </div>
-      </div>
 
-	      <div class="logos">
-	        <span class="laci">
-	          <p class="laci__letra-normal">L</p>
-	          <p class="laci__letra-resaltante"> A </p>
-	          <p class="laci__letra-normal">CI</p>
-        </span>
-	        <a href="https://www.flaticon.es/icono-gratis/presupuesto_781760?term=presupuesto&page=1&position=3&page=1&position=3&related_id=781760&origin=search" title="created by Freepik - Flaticon" target="__blank">
-	          <img class="logos__calculadora" src="../img/Calculadora.png" alt="Liquidar - Sueldo - LACI" title="created by Freepik - Flaticon">
-        </a>
-      </div>
-
-    </div>
-	    <nav class="menu">
-	      <ul class="menu__lista">
-	        <li class="menu__elemento">
-	          <span class="laci-menu">
-	            <p class="laci-menu__letra-normal">L</p>
-	            <p class="laci-menu__letra-resaltante">A</p>
-	            <p class="laci-menu__letra-normal">CI</p>
-          </span>
-        </li>
-	        <li class="menu__elemento"> <a class="menu__enlace" href="../Liquidar">Liquidar</a> </li>
-	        <li class="menu__elemento"> <a class="menu__enlace" href="../Aguinaldo">Aguinaldo</a> </li>
-	        <li class="menu__elemento"> <a class="menu__enlace" href="../Curriculum">Curriculum Vitae</a> </li>
-	        <li class="menu__elemento"> <a class="menu__enlace" href="../Indemnizacion">Indemnizaciones</a> </li>
-	        <li class="menu__elemento"> <a class="menu__enlace" href="../Nosotros">Nosotros</a> </li>
-	        <li class="menu__elemento"> <a class="menu__enlace" href="../Contacto">Contacto</a> </li> <!-- https://mail.google.com/mail/u/0/?tf=cm&fs=1&source=mailto&to=liquidarsueldos@gmail.com -->
-      </ul>
-    </nav>
-  </header>
-	  <div class="contenedor">
-	    <div class="contenedor__aside">
-	      <aside class="aside sombra">
-	        <p class="aside__titulo">Quizas te Interese</p>
-	        <ul class="aside__lista">
-	          <li class="aside__elemento">
-	            <a class="aside__enlace" href="../Liquidar">
-	              Liquidá tu sueldo
-	            </a>
-          </li>
-	          <li class="aside__elemento">
-	            <a class="aside__enlace" href="../Aguinaldo">
-	              Calcula tu Aguinaldo
-	            </a>
-          </li>
-	          <li class="aside__elemento">
-	            <a class="aside__enlace" href="../Curriculum">
-	              Confecciona tu Curriculum
-	            </a>
-          </li>
-	          <li class="aside__elemento">
-	            <a class="aside__enlace" href="../Indemnizacion">
-	              Calcula tu indemnización por despido
-	            </a>
-          </li>
-        </ul>
-      </aside>
-	      <aside class="aside sombra">
-	        <p class="aside__titulo">Marco legal</p>
-
-	        <ul class="aside__lista">
-	          <li class="aside__elemento">
-	            <a class="aside__enlace" target="_blank" href="http://servicios.infoleg.gob.ar/infolegInternet/anexos/25000-29999/25552/texact.htm">
-	              Régimen de contrato de Trabajo LEY N° 20.744
-	            </a>
-          </li>
-	          <li class="aside__elemento">
-	            <a class="aside__enlace" target="_blank" href="http://servicios.infoleg.gob.ar/infolegInternet/verNorma.do;jsessionid=05A2D4F2AD99A130DC6A551523FE9F96?id=28165">
-	              Ley del Sueldo Anual Complemetario
-	            </a>
-          </li>
-	          <li class="aside__elemento">
-	            <a class="aside__enlace" target="_blank" href="https://www.argentina.gob.ar/trabajo/buscastrabajo/conocetusderechos/licencias">
-	              Licencias
-	            </a>
-          </li>
-	          <li class="aside__elemento">
-	            <a class="aside__enlace" target="_blank" href="https://www.argentina.gob.ar/trabajo/buscastrabajo/conocetusderechos/salario">
-	              Salario
-	            </a>
-          </li>
-        </ul>
-      </aside>
-    </div>
-	    <div class="contenedor__contenido">
-	      <center>
-	        <div>
-	          <!-- ELECCION DE SEMESTRES -->
-	          <table class="ELE_SEM">
-	            <tr>
-	              <td> <center> <button id="BOTON_1ER_SEM" class="INPUT_BOTON" onclick="Desplegar(1, 0)"> 1era Cuota </button> </center></td>
-	              <td> <center> <button id="BOTON_2DO_SEM" class="INPUT_BOTON" onclick="Desplegar(2, 0)"> 2da Cuota </button> </center></td>
-            </tr>
-          </table>
-
-	          <form class="FORMULARIO_desactivado" id="FORM">
-	            <!-- INPUT -->
-	            <table>
-	              <tr>
-	                <td class="CL_INPUT_SEMESTRE_1_desactivado" id="ID_INPUT_SEMESTRE_1">
-	                  <label for="ENERO"> Enero </label>
-	                  <input id="ENERO" type="number" name="ENERO" required><br />
-	                  <label for="FEBRERO"> Febrero</label>
-	                  <input id="FEBRERO" type="number" name="FEBRERO" required><br />
-	                  <label for="MARZO"> Marzo </label>
-	                  <input id="MARZO" type="number" name="MARZO" required><br />
-	                  <label for="ABRIL"> Abril</label>
-	                  <input id="ABRIL" type="number" name="ABRIL" required><br />
-	                  <label for="MAYO"> Mayo </label>
-	                  <input id="MAYO" type="number" name="MAYO" required> <br />
-	                  <label for="JUNIO"> Junio</label>
-	                  <input id="JUNIO" type="number" name="JUNIO" required><br />
-                </td>
-              </tr>
-	              <tr>
-	                <td class="CL_INPUT_SEMESTRE_2_desactivado" id="ID_INPUT_SEMESTRE_2">
-	                  <label for="JULIO"> Julio </label>
-	                  <input id="JULIO" type="number" name="JULIO"><br />
-	                  <label for="AGOSTO"> Agosto </label>
-	                  <input id="AGOSTO" type="number" name="AGOSTO"><br />
-	                  <label for="SEPTIEMBRE"> Septiembre</label>
-	                  <input id="SEPTIEMBRE" type="number" name="SEPTIEMBRE"><br />
-	                  <label for="OCTUBRE"> Octubre </label>
-	                  <input id="OCTUBRE" type="number" name="OCTUBRE"><br />
-	                  <label for="NOVIEMBRE"> Noviembre</label>
-	                  <input id="NOVIEMBRE" type="number" name="NOVIEMBRE"><br />
-	                  <label for="DICIEMBRE"> Diciembre</label>
-	                  <input id="DICIEMBRE" type="number" name="DICIEMBRE"><br />
-                </td>
-              </tr>
-	              <tr>
-	                <td colspan="2">
-	                  <center> <button class="CL_BOTON_desactivado" id="ID_BOTON_1" type="button" onclick="Cargar(1);"> Calcular </button></center>
-	                  <center> <button class="CL_BOTON_desactivado" id="ID_BOTON_2" type="button" onclick="Cargar(2);"> Calcular </button></center>
-                </td>
-              </tr>
-            </table>
-
-	            <!-- OUTPUT -->
-	            <table>
-	              <tr id="ID_OUTPUT_AGUINALDO_1">
-	                <td>
-	                  <label for="AGUINALDO_1"> Aguinaldo </label>
-	                  <input id="AGUINALDO_1" readonly />
-                </td>
-	                <td>
-	                  <label for="AGUINALDO_MAS_MES_1"> Aguinaldo m&aacute;s cobro de Junio</label>
-	                  <input id="AGUINALDO_MAS_MES_1" readonly />
-                </td>
-              </tr>
-	              <tr id="ID_OUTPUT_AGUINALDO_2">
-	                <td>
-	                  <label for="AGUINALDO_2"> Aguinaldo </label>
-	                  <input id="AGUINALDO_2" readonly />
-                </td>
-	                <td>
-	                  <label for="AGUINALDO_MAS_MES_2"> Aguinaldo m&aacute;s cobro de Diciembre</label>
-	                  <input id="AGUINALDO_MAS_MES_2" readonly />
-                </td>
-              </tr>
-            </table>
-          </form>
+        <div class="contenedor__contenido">
+            <div>
+                <button id="boton_1er_sem" class="input_boton" onclick="desplegar(1, 0)"> 1era cuota </button>
+                <button id="boton_2do_sem" class="input_boton" onclick="desplegar(2, 0)"> 2da cuota </button>
+            </div>
+            <div>
+                <form class="formulario_desactivado" id="form">
+                    <label for="enero"> enero </label>
+                    <input id="enero" type="number" name="enero" required>
+                    <br />
+                    <label for="febrero"> febrero</label>
+                    <input id="febrero" type="number" name="febrero" required>
+                    <br />
+                    <label for="marzo"> marzo </label>
+                    <input id="marzo" type="number" name="marzo" required>
+                    <br />
+                    <label for="abril"> abril</label>
+                    <input id="abril" type="number" name="abril" required>
+                    <br />
+                    <label for="mayo"> mayo </label>
+                    <input id="mayo" type="number" name="mayo" required>
+                    <br />
+                    <label for="junio"> junio</label>
+                    <input id="junio" type="number" name="junio" required>
+                    <br />
+                    <label for="julio"> julio </label>
+                    <input id="julio" type="number" name="julio">
+                    <br />
+                    <label for="agosto"> agosto </label>
+                    <input id="agosto" type="number" name="agosto">
+                    <br />
+                    <label for="septiembre"> septiembre</label>
+                    <input id="septiembre" type="number" name="septiembre">
+                    <br />
+                    <label for="octubre"> octubre </label>
+                    <input id="octubre" type="number" name="octubre">
+                    <br />
+                    <label for="noviembre"> noviembre</label>
+                    <input id="noviembre" type="number" name="noviembre">
+                    <br />
+                    <label for="diciembre"> diciembre</label>
+                    <input id="diciembre" type="number" name="diciembre">
+                    <br />
+                    <button class="cl_boton_desactivado" id="id_boton_1" type="button" onclick="cargar(1);">calcular</button>
+                    <button class="cl_boton_desactivado" id="id_boton_2" type="button" onclick="cargar(2);">calcular</button>
+                </form>
+                <span>
+                    <label for="aguinaldo_1"> aguinaldo </label>
+                    <input id="aguinaldo_1" readonly />
+                </span>
+                <span>
+                    <label for="aguinaldo_2"> aguinaldo </label>
+                    <input id="aguinaldo_2" readonly />
+                </span>
+            </div>
         </div>
-      </center>
-    </div>
-	    <div class="contenedor__aside">
-	      <aside class="redes sombra">
-	        <p class="redes__titulo">Seguinos en</p>
-	        <ul class="redes__lista">
-	          <li class="redes__red">
-	            <div class="enlace">
-	              <a class="enlace__enlace" target="_blank" href="https://www.facebook.com/profile.php?id=100074691094643">
-	                <img class="enlace__icono" alt="Facebook.ico" src="../img/Facebook.ico">
-	                <h4 class="enlace__tag"> Facebook </h4>
-              </a>
-            </div>
-          </li>
-	          <li class="redes__red">
-	            <div class="enlace">
-	              <a class="enlace__enlace" target="_blank" href="https://www.instagram.com/liquidar_sueldos?utm_medium">
-	                <img class="enlace__icono" alt="Instagram.png" src="../img/Instagram.png">
-	                <h4 class="enlace__label">@liquidar_sueldos</h4>
-              </a>
-            </div>
-          </li>
-	          <li class="redes__red">
-	            <div class="enlace">
-	              <a class="enlace__enlace" target="_blank" href="https://twitter.com/LiquidarSueldos?">
-	                <img class="enlace__icono" alt="Twitter.jpg" src="../img/Twitter.png">
-	                <h4 class="enlace__label">Twitter</h4>
-              </a>
-            </div>
-          </li>
-        </ul>
-      </aside>
-    </div>
-  </div>
 
-	  <footer class="footer">
-	    <p class="footer__copyright">Copyright 2021 - Todos los derechos reservados</p>
-	    <p class="footer__parrafo">Página Web producida por medio de software libre.</p>
-	    <a class="footer__enlace" href="Nosotros.html">Nosotros</a>
-	    <a class="footer__enlace" target="_blank" href="https://mail.google.com/mail/u/0/?tf=cm&fs=1&source=mailto&to=liquidarsueldos@gmail.com"> Contacto </a>
-	    <!-- Presupuesto icons created by Freepik - Flaticon -->
-  </footer>
+        <div class="contenedor__aside" id="aside__right">
+        </div>
+    </div>
+
+    <footer></footer>
 </body>
 </html>

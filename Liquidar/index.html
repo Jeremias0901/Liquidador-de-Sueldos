@@ -1,603 +1,456 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Liquidador de Sueldo</title>
-
-  <link rel="shortcut icon" href="../img/logo.jpeg">
-
-  <link rel="stylesheet" type="text/css" href="../General/estilos.css">
-  <link rel="stylesheet" type="text/css" href="css/estilos.css">
+    <script src="../recursosVista/loadComponents.js"></script>
+    <title>Liquidador de Sueldo</title>
 </head>
+
 <body>
-  <header class="header sombra">
-    <div class="header__contenido">
-      <div class="preview">
-        <h1 class="preview__title">LIQUIDADOR DE SUELDOS</h1>
-        <div class="ofrecimientos">
-          <ul class="ofrecimientos__lista">
-            <li class="ofrecimientos__elemento">Calcula tu Sueldo</li>
-            <li class="ofrecimientos__elemento">Confecciona tu Curriculum </li>
-            <li class="ofrecimientos__elemento">Verifica tu sueldo</li>
-          </ul>
-          <ul class="ofrecimientos__lista">
-            <li class="ofrecimientos__elemento">Conoce de las condiciones de tu Sueldo</li>
-            <li class="ofrecimientos__elemento">Calcula tu indemnización</li>
-            <li class="ofrecimientos__elemento">Calcula tu Aguinaldo</li>
-          </ul>
+    <header></header>
+    <nav></nav>
+    <div class="contenedor">
+        <div class="contenedor__aside" id="aside__left">
         </div>
-      </div>
-      <div class="logos">
-        <span class="laci">
-          <p class="laci__letra-resaltante">L</p>
-          <p class="laci__letra-normal">A</p>
-          <p class="laci__letra-normal">C</p>
-          <p class="laci__letra-normal">I</p>
-        </span>
-        <a href="https://www.flaticon.es/icono-gratis/presupuesto_781760?term=presupuesto&page=1&position=3&page=1&position=3&related_id=781760&origin=search" title="created by Freepik - Flaticon" target="__blank">
-          <img class="logos__calculadora" src="../img/Calculadora.png" alt="liquidador-de-sueldos" title="created by Freepik - Flaticon">
-        </a>
-      </div>
-    </div>
-    <nav class="menu">
-      <ul class="menu__lista">
-        <li class="menu__elemento">
-          <span class="laci-menu">
-            <p class="laci-menu__letra-resaltante">L</p>
-            <p class="laci-menu__letra-normal">ACI</p>
-          </span>
-        </li>
-        <li class="menu__elemento"><a class="menu__enlace" href="../Liquidar">Liquidar</a></li>
-        <li class="menu__elemento"><a class="menu__enlace" href="../Aguinaldo">Aguinaldo</a></li>
-        <li class="menu__elemento"><a class="menu__enlace" href="../Curriculum">Curriculum Vitae</a></li>
-        <li class="menu__elemento"><a class="menu__enlace" href="../Indemnizacion">Indemnizaciones</a></li>
-        <li class="menu__elemento"><a class="menu__enlace" href="../Nosotros">Nosotros</a></li>
-        <li class="menu__elemento"><a class="menu__enlace" href="../Contacto">Contacto</a></li>
-        <!-- https://mail.google.com/mail/u/0/?tf=cm&fs=1&source=mailto&to=liquidarsueldos@gmail.com -->
-      </ul>
-    </nav>
-  </header>
-  <div class="contenedor">
-    <div class="contenedor__aside">
-      <aside class="aside sombra">
-        <p class="aside__titulo">Quizas te Interese</p>
-        <ul class="aside__lista">
-          <li class="aside__elemento">
-            <a class="aside__enlace" href="../Liquidar">Liquidá tu sueldo</a>
-          </li>
-          <li class="aside__elemento">
-            <a class="aside__enlace" href="../Aguinaldo">Calcula tu Aguinaldo</a>
-          </li>
-          <li class="aside__elemento">
-            <a class="aside__enlace" href="../Curriculum">Confecciona tu Curriculum</a>
-          </li>
-          <li class="aside__elemento">
-            <a class="aside__enlace" href="../Indemnizacion">Calcula tu indemnización por despido</a>
-          </li>
-        </ul>
-      </aside>
-      <aside class="aside sombra">
-        <p class="aside__titulo">Marco legal</p>
-        <ul class="aside__lista">
-          <li class="aside__elemento">
-            <a class="aside__enlace" target="_blank"
-              href="http://servicios.infoleg.gob.ar/infolegInternet/anexos/25000-29999/25552/texact.htm">
-              Régimen de contrato de Trabajo LEY N° 20.744
-            </a>
-          </li>
-          <li class="aside__elemento">
-            <a class="aside__enlace" target="_blank"
-              href="http://servicios.infoleg.gob.ar/infolegInternet/verNorma.do;jsessionid=05A2D4F2AD99A130DC6A551523FE9F96?id=28165">
-              Ley del Sueldo Anual Complemetario
-            </a>
-          </li>
-          <li class="aside__elemento">
-            <a class="aside__enlace" target="_blank"
-              href="https://www.argentina.gob.ar/trabajo/buscastrabajo/conocetusderechos/licencias">
-              Licencias
-            </a>
-          </li>
-          <li class="aside__elemento">
-            <a class="aside__enlace" target="_blank"
-              href="https://www.argentina.gob.ar/trabajo/buscastrabajo/conocetusderechos/salario">
-              Salario
-            </a>
-          </li>
-          <li class="aside__elemento">
-            <a class="aside__enlace" target="_blank"
-              href="https://www.argentina.gob.ar/iaf/retiros-y-pensiones/asignaciones-familiares/tabla-de-asignaciones-familiares">
-              Asignaciones Familiares
-            </a>
-          </li>
-        </ul>
-      </aside>
-    </div>
-    <div class="contenedor__contenido">
-      <div class="frm-input">
-        <form class="formulario sombra" method="get">
-          <div class="titulo">
-            <h1 class="titulo__texto">Llena el formulario para liquidar tu sueldo</h1>
-          </div>
-          <div class="controles-FormularioInput">
-            <span class="control">
-              <label class="control__label" for="name">Nombre</label>
-              <input class="control__input" id="name" type="text">
-            </span>
-            <span class="control">
-              <label class="control__label" for="surname">Apellido</label>
-              <input class="control__input" id="surname" type="text">
-            </span>
-            <span class="control">
-              <label class="control__label" for="dni">DNI</label>
-              <input class="control__input" id="dni" type="number">
-            </span>
-            <span class="control">
-              <label class="control__label" for="cuil">CUIL</label>
-              <input class="control__input" id="cuil" type="number">
-            </span>
-            <span class="control">
-              <label class="control__label" for="mesLiquidar">Mes a liquidar<strong class="control__requerido">*</strong></label>
-              <select class="control__select" id="mesLiquidar" >
-                <option value="0">Seleccionar</option>
-                <option value="enero">Enero</option>
-                <option value="febrero">Febrero</option>
-                <option value="marzo">Marzo</option>
-                <option value="abril">Abril</option>
-                <option value="mayo">Mayo</option>
-                <option value="junio">Junio</option>
-                <option value="julio">Julio</option>
-                <option value="agosto">Agosto</option>
-                <option value="septiembre">Septiembre</option>
-                <option value="octubre">Octubre</option>
-                <option value="noviembre">Noviembre</option>
-                <option value="diciembre">Diciembre</option>
-              </select>
-            </span>
-            <span class="control">
-              <label class="control__label" for="sueldoBasico">Sueldo básico<strong class="control__requerido">*</strong></label>
-              <input class="control__input" id="sueldoBasico" type="number">
-            </span>
-            <span class="control">
-              <label class="control__label" for="fechaIngresoEmpresa">Fecha de Ingreso ala Empresa<strong class="control__requerido">*</strong></label>
-              <input class="control__input" id="fechaIngresoEmpresa" type="number">
-            </span>
-            <span class="control">
-              <label class="control__label" for="porcentajeAnio">Porcentaje por año de antig&uuml;edad<strong class="control__requerido">*</strong></label>
-              <input class="control__input" id="porcentajeAnio" type="number">
-            </span>
-            <span class="control">
-              <label class="control__label" for="presentismo">Presentismo<strong class="control__requerido">*</strong></label>
-              <input class="control__input" id="presentismo" type="number" >
-            </span>
-            <span class="control">
-              <label class="control__label" for="inasistencias">Inasistencias<strong class="control__requerido">*</strong></label>
-              <input class="control__input" id="inasistencias" type="number" >
-            </span>
-            <span class="control">
-              <label class="control__label" for="viaticos">Viaticos</label>
-              <input class="control__input" id="viaticos" type="number">
-            </span>
-            <span class="control">
-              <label class="control__label" for="vacaciones">Dias de Vacaciones</label>
-              <input class="control__input" id="vacaciones" type="number">
-            </span>
-            <span class="control">
-              <label class="control__label" for="familiarCargo">Familiar(es) a cargo</label>
-              <input class="control__input" id="familiarCargo" type="number">
-            </span>
-          </div>
-          <div class="grupos">
-            <div class="grupo grupo-asignaciones sombraSecundaria">
-              <div class="titulo">
-                <h1 class="titulo__texto">Asignaciones</h1>
-                <hr class="titulo__linea" />
-              </div>
-              <div class="controles controles-asignaciones">
-                <span class="control">
-                  <label class="control__label" for="ASIGNACION__NACIMIENTO">Nacimiento</label>
-                  <input class="control__input" id="ASIGNACION__NACIMIENTO" type="number">
-                </span>
-                <span class="control">
-                  <label class="control__label" for="ASIGNACION__ADOPCION">Adopción</label>
-                  <input class="control__input" id="ASIGNACION__ADOPCION" type="number">
-                </span>
-                <span class="control">
-                  <label class="control__label" for="ASIGNACION__MATRIMONIO">Matrimonio</label>
-                  <input class="control__input" id="ASIGNACION__MATRIMONIO" type="number">
-                </span>
-                <span class="control">
-                  <label class="control__label" for="ASIGNACION__PRENATAL">Asignación Prenatal</label>
-                  <input class="control__input" id="ASIGNACION__PRENATAL" type="number">
-                </span>
-                <span class="control">
-                  <label class="control__label" for="ASIGNACION__HIJO">Asignación por Hijo</label>
-                  <input class="control__input" id="ASIGNACION__HIJO" type="number">
-                </span>
-                <span class="control">
-                  <label class="control__label" for="ASIGNACION__HIJO_DIS">Asignación por Hijo Discapacitado</label>
-                  <input class="control__input" id="ASIGNACION__HIJO_DIS" type="number">
-                </span>
-              </div>
+        <div class="contenedor__contenido">
+            <div class="frm-input">
+                <form class="formulario sombra" method="get">
+                    <div class="titulo"> <h1 class="titulo__texto">Llena el formulario para liquidar tu sueldo</h1>
+                    </div>
+                    <div class="controles-FormularioInput">
+                        <span class="control">
+                            <label class="control__label" for="name">Nombre</label>
+                            <input class="control__input" id="name" type="text">
+                        </span>
+                        <span class="control">
+                            <label class="control__label" for="surname">Apellido</label>
+                            <input class="control__input" id="surname" type="text">
+                        </span>
+                        <span class="control">
+                            <label class="control__label" for="dni">DNI</label>
+                            <input class="control__input" id="dni" type="number">
+                        </span>
+                        <span class="control">
+                            <label class="control__label" for="cuil">CUIL</label>
+                            <input class="control__input" id="cuil" type="number">
+                        </span>
+                        <span class="control">
+                            <label class="control__label" for="mesLiquidar">Mes a liquidar<strong class="control__requerido">*</strong></label>
+                            <select class="control__select" id="mesLiquidar" >
+                                <option value="0">Seleccionar</option>
+                                <option value="enero">Enero</option>
+                                <option value="febrero">Febrero</option>
+                                <option value="marzo">Marzo</option>
+                                <option value="abril">Abril</option>
+                                <option value="mayo">Mayo</option>
+                                <option value="junio">Junio</option>
+                                <option value="julio">Julio</option>
+                                <option value="agosto">Agosto</option>
+                                <option value="septiembre">Septiembre</option>
+                                <option value="octubre">Octubre</option>
+                                <option value="noviembre">Noviembre</option>
+                                <option value="diciembre">Diciembre</option>
+                            </select>
+                        </span>
+                        <span class="control">
+                            <label class="control__label" for="sueldoBasico">Sueldo básico<strong class="control__requerido">*</strong></label>
+                            <input class="control__input" id="sueldoBasico" type="number">
+                        </span>
+                        <span class="control">
+                            <label class="control__label" for="fechaIngresoEmpresa">Fecha de Ingreso a la Empresa<strong class="control__requerido">*</strong></label>
+                            <input class="control__input" id="fechaIngresoEmpresa" type="number">
+                        </span>
+                        <span class="control">
+                            <label class="control__label" for="porcentajeAnio">Porcentaje por año de antig&uuml;edad<strong class="control__requerido">*</strong></label>
+                            <input class="control__input" id="porcentajeAnio" type="number">
+                        </span>
+                        <span class="control">
+                            <label class="control__label" for="presentismo">Presentismo<strong class="control__requerido">*</strong></label>
+                            <input class="control__input" id="presentismo" type="number" >
+                        </span>
+                        <span class="control">
+                            <label class="control__label" for="inasistencias">Inasistencias<strong class="control__requerido">*</strong></label>
+                            <input class="control__input" id="inasistencias" type="number" >
+                        </span>
+                        <span class="control">
+                            <label class="control__label" for="viaticos">Viaticos</label>
+                            <input class="control__input" id="viaticos" type="number">
+                        </span>
+                        <span class="control">
+                            <label class="control__label" for="vacaciones">Dias de Vacaciones</label>
+                            <input class="control__input" id="vacaciones" type="number">
+                        </span>
+                        <span class="control">
+                            <label class="control__label" for="familiarCargo">Familiar(es) a cargo</label>
+                            <input class="control__input" id="familiarCargo" type="number">
+                        </span>
+                    </div>
+                    <div class="grupos">
+                        <div class="grupo grupo-asignaciones sombraSecundaria">
+                            <div class="titulo">
+                                <h1 class="titulo__texto">Asignaciones</h1>
+                                <hr class="titulo__linea" />
+                            </div>
+                            <div class="controles controles-asignaciones">
+                                <span class="control">
+                                    <label class="control__label" for="ASIGNACION__NACIMIENTO">Nacimiento</label>
+                                    <input class="control__input" id="ASIGNACION__NACIMIENTO" type="number">
+                                </span>
+                                <span class="control">
+                                    <label class="control__label" for="ASIGNACION__ADOPCION">Adopción</label>
+                                    <input class="control__input" id="ASIGNACION__ADOPCION" type="number">
+                                </span>
+                                <span class="control">
+                                    <label class="control__label" for="ASIGNACION__MATRIMONIO">Matrimonio</label>
+                                    <input class="control__input" id="ASIGNACION__MATRIMONIO" type="number">
+                                </span>
+                                <span class="control">
+                                    <label class="control__label" for="ASIGNACION__PRENATAL">Asignación Prenatal</label>
+                                    <input class="control__input" id="ASIGNACION__PRENATAL" type="number">
+                                </span>
+                                <span class="control">
+                                    <label class="control__label" for="ASIGNACION__HIJO">Asignación por Hijo</label>
+                                    <input class="control__input" id="ASIGNACION__HIJO" type="number">
+                                </span>
+                                <span class="control">
+                                    <label class="control__label" for="ASIGNACION__HIJO_DIS">Asignación por Hijo Discapacitado</label>
+                                    <input class="control__input" id="ASIGNACION__HIJO_DIS" type="number">
+                                </span>
+                            </div>
+                        </div>
+                        <div class="grupo grupo-horas sombraSecundaria">
+                            <div class="titulo">
+                                <h1 class="titulo__texto">Horas</h1>
+                                <hr class="titulo__linea" />
+                            </div>
+                            <div class="controles controles-horas">
+                                <span class="control">
+                                    <label class="control__label" for="horasDia">Horas por día<strong class="control__requerido">*</strong></label>
+                                    <input class="control__input" id="horasDia" type="number">
+                                </span>
+                                <span class="control">
+                                    <label class="control__label" for="horasExtra50">Horas extras al 50%</label>
+                                    <input class="control__input" id="horasExtra50" type="number">
+                                </span>
+                                <span class="control">
+                                    <label class="control__label" for="horasExtra100">Horas extras al 100%</label>
+                                    <input class="control__input" id="horasExtra100" type="number">
+                                </span>
+                            </div>
+                        </div>
+                        <div class="grupo grupo-aportes sombraSecundaria">
+                            <div class="titulo">
+                                <h1 class="titulo__texto">Aportes (%)</h1>
+                                <hr class="titulo__linea" />
+                            </div>
+                            <div class="controles controles-aportes">
+                                <span class="control">
+                                    <label class="control__label" for="jubilacion">Jubilación <strong class="control__requerido">*</strong></label>
+                                    <input class="control__input" id="jubilacion" type="number" value="11">
+                                </span>
+                                <span class="control">
+                                    <label class="control__label" for="obraSocial">Obra Social <strong class="control__requerido">*</strong></label>
+                                    <input class="control__input" id="obraSocial" type="number" value="4">
+                                </span>
+                                <span class="control">
+                                    <label class="control__label" for="pami">PAMI<strong class="control__requerido">*</strong></label>
+                                    <input class="control__input" id="pami" type="number" value="5">
+                                </span>
+                                <span class="control">
+                                    <label class="control__label" for="sindicato">Sindicato<strong class="control__requerido">*</strong></label>
+                                    <input class="control__input" id="sindicato" type="number" value="4">
+                                </span>
+                            </div>
+                        </div>
+                        <div class="grupo grupo-titulo sombraSecundaria">
+                            <div class="titulo">
+                                <h1 class="titulo__texto">Titulo</h1>
+                                <hr class="titulo__linea" />
+                            </div>
+                            <div class="controles controles-titulo">
+                                <span class="control">
+                                    <label class="control__label" for="tituloNombre">Titulo</label>
+                                    <input class="control__input" id="tituloNombre" type="text">
+                                </span>
+                                <span class="control">
+                                    <label class="control__label" for="tituloValor">Valor</label>
+                                    <input class="control__input" id="tituloValor" type="number">
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <button id="submit" class="formulario__boton sombraSecundaria" type="submit">Calcular</button>
+                </form>
             </div>
-            <div class="grupo grupo-horas sombraSecundaria">
-              <div class="titulo">
-                <h1 class="titulo__texto">Horas</h1>
-                <hr class="titulo__linea" />
-              </div>
-              <div class="controles controles-horas">
-                <span class="control">
-                  <label class="control__label" for="horasDia">Horas por día<strong class="control__requerido">*</strong></label>
-                  <input class="control__input" id="horasDia" type="number">
-                </span>
-                <span class="control">
-                  <label class="control__label" for="horasExtra50">Horas extras al 50%</label>
-                  <input class="control__input" id="horasExtra50" type="number">
-                </span>
-                <span class="control">
-                  <label class="control__label" for="horasExtra100">Horas extras al 100%</label>
-                  <input class="control__input" id="horasExtra100" type="number">
-                </span>
-              </div>
-            </div>
-            <div class="grupo grupo-aportes sombraSecundaria">
-              <div class="titulo">
-                <h1 class="titulo__texto">Aportes (%)</h1>
-                <hr class="titulo__linea" />
-              </div>
-              <div class="controles controles-aportes">
-                <span class="control">
-                  <label class="control__label" for="jubilacion">Jubilación <strong class="control__requerido">*</strong></label>
-                  <input class="control__input" id="jubilacion" type="number" value="11">
-                </span>
-                <span class="control">
-                  <label class="control__label" for="obraSocial">Obra Social <strong class="control__requerido">*</strong></label>
-                  <input class="control__input" id="obraSocial" type="number" value="4">
-                </span>
-                <span class="control">
-                  <label class="control__label" for="pami">PAMI<strong class="control__requerido">*</strong></label>
-                  <input class="control__input" id="pami" type="number" value="5">
-                </span>
-                <span class="control">
-                  <label class="control__label" for="sindicato">Sindicato<strong class="control__requerido">*</strong></label>
-                  <input class="control__input" id="sindicato" type="number" value="4">
-                </span>
-              </div>
-            </div>
-            <div class="grupo grupo-titulo sombraSecundaria">
-              <div class="titulo">
-                <h1 class="titulo__texto">Titulo</h1>
-                <hr class="titulo__linea" />
-              </div>
-              <div class="controles controles-titulo">
-                <span class="control">
-                  <label class="control__label" for="tituloNombre">Titulo</label>
-                  <input class="control__input" id="tituloNombre" type="text">
-                </span>
-                <span class="control">
-                  <label class="control__label" for="tituloValor">Valor</label>
-                  <input class="control__input" id="tituloValor" type="number">
-                </span>
-              </div>
-            </div>
-          </div>
-          <button id="submit" class="formulario__boton sombraSecundaria" type="submit">Calcular</button>
-        </form>
-      </div>
-      <section class="output sombra">
-        <div class="titulo">
-          <h1 class="titulo__texto">Recibo de Sueldo</h1>
+            <section hidden class="output sombra">
+                <div class="titulo">
+                    <h1 class="titulo__texto">Recibo de Sueldo</h1>
+                </div>
+                <div class="mostradores">
+                    <article class="mostradores-1">
+                        <div class="mostradores-1__columna">
+                            <span class="display">
+                                <label class="display__label" for="razonSocial">Razón Social</label>
+                                <input class="display__input" id="razonSocial" type="text">
+                            </span>
+                            <span class="display">
+                                <label class="display__label" for="cuil">cuil</label>
+                                <input class="display__input-invisible" id="output__cuil" type="number" readonly>
+                            </span>
+                        </div>
+                        <div class="mostradores-1__columna">
+                            <span class="display">
+                                <label class="display__label" for="domicilio">Domicilio</label>
+                                <input class="display__input" id="output__domicilio" type="text">
+                            </span>
+                            <span class="display">
+                                <label class="display__label" for="cuit">CUIT</label>
+                                <input class="display__input" id="output__cuit" type="number">
+                            </span>
+                        </div>
+                    </article>
+                    <hr class="linea">
+                    <article class="mostradores-2">
+                        <span class="display-2">
+                            <label class="display-2__label" for="output__name">Nombre y Apellido</label>
+                            <input class="display-2__input-invisible" id="output__name" type="text" readonly>
+                            <input class="display-2__input-invisible" id="output__surname" type="text" readonly>
+                        </span>
+                        <span class="display-2">
+                            <label class="display-2__label" for="output__dni">dni</label>
+                            <input class="display-2__input-invisible" id="output__dni" type="number" readonly>
+                        </span>
+                        <span class="display-2">
+                            <label class="display-2__label" for="sector">Sector</label>
+                            <input class="display-2__input" id="sector" type="text">
+                        </span>
+                        <span class="display-2">
+                            <label class="display-2__label" for="legajo">Legajo</label>
+                            <input class="display-2__input" id="legajo" type="number">
+                        </span>
+                        <span class="display-2">
+                            <label class="display-2__label" for="categoria">Categoria</label>
+                            <select class="display-2__select" id="categoria" type="text">
+                                <option value="0">Seleccionar</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                            </select>
+                        </span>
+                        <span class="display-2">
+                            <label class="display-2__label" for="bancoDeposito">Banco Deposito</label>
+                            <input class="display-2__input" id="bancoDeposito" type="text">
+                        </span>
+                        <span class="display-2">
+                            <label class="display-2__label" for="output__fecha">Fecha</label>
+                            <input class="display-2__input-invisible" id="output__fecha" type="datetime-local" readonly>
+                        </span>
+                        <span class="display-2">
+                            <label class="display-2__label" for="tarea">Tarea</label>
+                            <input class="display-2__input" id="tarea" type="text">
+                        </span>
+                        <span class="display-2">
+                            <label class="display-2__label" for="output__fechaIngresoEmpresa">Año de Ingreso</label>
+                            <input class="display-2__input-invisible" id="output__fechaIngresoEmpresa" type="number" readonly>
+                        </span>
+                        <span class="display-2">
+                            <label class="display-2__label" for="output__sueldoBasico">Sueldo Básico</label>
+                            <input class="display-2__input-invisible" id="output__sueldoBasico" type="number" readonly>
+                        </span>
+                    </article>
+                    <hr class="linea">
+                    <article class="mostradores-3">
+                        <table class="tabla">
+                        <thead>
+                            <tr class="tabla__fila-header">
+                                <th class="tabla__columna-header"> <p class="tabla__parrafo">Descripción</p> </th>
+                                <th class="tabla__columna-header"> <p class="tabla__parrafo">Cantidad / Pocentaje</p> </th>
+                                <th class="tabla__columna-header"> <p class="tabla__parrafo">Haberes sin Descuento</p> </th>
+                                <th class="tabla__columna-header"> <p class="tabla__parrafo">Descuento</p> </th>
+                                <th class="tabla__columna-header"> <p class="tabla__parrafo">Neto</p> </th>
+                            </tr>
+                        </thead>
+                        <tbody class="tabla__cuerpo">
+                            <tr class="tabla__fila">
+                            <td class="tabla__columna">
+                                <p class="tabla__parrafo">Jubilación</p>
+                            </td>
+                            <td class="tabla__columna"><input class="tabla__input-invisible" id="output__jubilacion" type="number" readonly></td>
+                            <td class="tabla__columna"></td>
+                            <td class="tabla__columna"><input class="tabla__input-invisible" id="output__jubilacionR" type="number" readonly></td>
+                            <td class="tabla__columna"></td>
+                            </tr>
+                            <tr class="tabla__fila">
+                            <td class="tabla__columna">
+                                <p class="tabla__parrafo">pami</p>
+                            </td>
+                            <td class="tabla__columna"><input class="tabla__input-invisible" id="output__pami" type="number" readonly></td>
+                            <td class="tabla__columna"></td>
+                            <td class="tabla__columna"><input class="tabla__input-invisible" id="output__pamiR" type="number" readonly></td>
+                            <td class="tabla__columna"></td>
+                            </tr>
+                            <tr class="tabla__fila">
+                            <td class="tabla__columna">
+                                <p class="tabla__parrafo">Obra Social</p>
+                            </td>
+                            <td class="tabla__columna">
+                                <input class="tabla__input-invisible" id="output__obraSocial" type="number" readonly>
+                            </td>
+                            <td class="tabla__columna">
+                            </td>
+                            <td class="tabla__columna">
+                                <input class="tabla__input-invisible" id="output__obraSocialR" type="number" readonly>
+                            </td>
+                            <td class="tabla__columna"></td>
+                            </tr>
+                            <tr class="tabla__fila">
+                            <td class="tabla__columna">
+                                <p class="tabla__parrafo">Sindicato</p>
+                            </td>
+                            <td class="tabla__columna">
+                                <input class="tabla__input-invisible" id="output__sindicato" type="number" readonly>
+                            </td>
+                            <td class="tabla__columna">
+                            </td>
+                            <td class="tabla__columna">
+                                <input class="tabla__input-invisible" id="output__sindicatoR" type="number" readonly>
+                            </td>
+                            <td class="tabla__columna"></td>
+                            </tr>
+                            <tr class="tabla__fila">
+                            <td class="tabla__columna">
+                                <p class="tabla__parrafo">Familiar a Cargo</p>
+                            </td>
+                            <td class="tabla__columna">
+                                <input class="tabla__input-invisible" id="output__familiarCargo" type="number" readonly>
+                            </td>
+                            <td class="tabla__columna">
+                            </td>
+                            <td class="tabla__columna">
+                                <input class="tabla__input-invisible" id="output__familiarCargoR" type="number" readonly>
+                            </td>
+                            <td class="tabla__columna"></td>
+                            </tr>
+                            <tr class="tabla__fila">
+                            <td class="tabla__columna">
+                                <p class="tabla__parrafo">Antig&uuml;edad</p>
+                            </td>
+                            <td class="tabla__columna">
+                                <input class="tabla__input-invisible" id="output__antiguedad" type="number" readonly>
+                            </td>
+                            <td class="tabla__columna">
+                                <input class="tabla__input-invisible" id="output__antiguedadR" type="number" readonly>
+                            </td>
+                            <td class="tabla__columna"></td>
+                            <td class="tabla__columna"></td>
+                            </tr>
+                            <tr class="tabla__fila">
+                            <td class="tabla__columna">
+                                <p class="tabla__parrafo">Titulo</p>
+                            </td>
+                            <td class="tabla__columna">
+                                <input class="tabla__input-invisible" id="output__tituloValor" type="number" readonly>
+                            </td>
+                            <td class="tabla__columna">
+                                <input class="tabla__input-invisible" id="output__tituloValorR" type="number" readonly>
+                            </td>
+                            <td class="tabla__columna"></td>
+                            <td class="tabla__columna"></td>
+                            </tr>
+                            <tr class="tabla__fila">
+                            <td class="tabla__columna">
+                                <p class="tabla__parrafo">Presentismo</p>
+                            </td>
+                            <td class="tabla__columna">
+                                <input class="tabla__input-invisible" id="output__presentismo" type="number" readonly>
+                            </td>
+                            <td class="tabla__columna">
+                                <input class="tabla__input-invisible" id="output__presentismoR" type="number" readonly>
+                            </td>
+                            <td class="tabla__columna"></td>
+                            <td class="tabla__columna"></td>
+                            </tr>
+                            <tr class="tabla__fila">
+                            <td class="tabla__columna">
+                                <p class="tabla__parrafo">Horas Extra al 50%</p>
+                            </td>
+                            <td class="tabla__columna">
+                                <input class="tabla__input-invisible" id="output__horasExtra50" type="number" readonly>
+                            </td>
+                            <td class="tabla__columna">
+                                <input class="tabla__input-invisible" id="output__horasExtra50R" type="number" readonly>
+                            </td>
+                            <td class="tabla__columna"></td>
+                            <td class="tabla__columna"></td>
+                            </tr>
+                            <tr class="tabla__fila">
+                            <td class="tabla__columna">
+                                <p class="tabla__parrafo">Horas Extra al 100%</p>
+                            </td>
+                            <td class="tabla__columna">
+                                <input class="tabla__input-invisible" id="output__horasExtra100" type="number" readonly>
+                            </td>
+                            <td class="tabla__columna">
+                                <input class="tabla__input-invisible" id="output__horasExtra100R" type="number" readonly>
+                            </td>
+                            <td class="tabla__columna"></td>
+                            <td class="tabla__columna"></td>
+                            </tr>
+                            <tr class="tabla__fila">
+                            <td class="tabla__columna">
+                                <p class="tabla__parrafo">Viaticos</p>
+                            </td>
+                            <td class="tabla__columna">
+                                <input class="tabla__input-invisible" id="output__viaticos" type="number" readonly>
+                            </td>
+                            <td class="tabla__columna">
+                                <input class="tabla__input-invisible" id="output__viaticosR" type="number" readonly>
+                            </td>
+                            <td class="tabla__columna"></td>
+                            <td class="tabla__columna"></td>
+                            </tr>
+                            <tr class="tabla__fila">
+                            <td class="tabla__columna">
+                                <p class="tabla__parrafo">Inasistencias</p>
+                            </td>
+                            <td class="tabla__columna">
+                                <input class="tabla__input-invisible" id="output__inasistencias" type="number" readonly>
+                            </td>
+                            <td class="tabla__columna">
+                            </td>
+                            <td class="tabla__columna">
+                                <input class="tabla__input-invisible" id="output__inasistenciasR" type="number" readonly>
+                            </td>
+                            <td class="tabla__columna"></td>
+                            </tr>
+                            <tr class="tabla__fila">
+                            <td class="tabla__columna">
+                                <p class="tabla__parrafo">Total</p>
+                            </td>
+                            <td class="tabla__columna">
+                                <input class="tabla__input-invisible" id="output__sueldoBruto" type="number" readonly>
+                            </td>
+                            <td class="tabla__columna">
+                                <input class="tabla__input-invisible" id="output__horasDia" type="number" readonly>
+                            </td>
+                            <td class="tabla__columna">
+                                <input class="tabla__input-invisible" id="output__aportes" type="number" readonly>
+                            </td>
+                            <td class="tabla__columna">
+                                <input class="tabla__input-invisible" id="output__sueldoNetoCobrar" type="number" readonly>
+                            </td>
+                            </tr>
+                        </tbody>
+                        </table>
+                    </article>
+                </div>
+            </section>
         </div>
-        <div class="mostradores">
-          <article class="mostradores-1">
-            <div class="mostradores-1__columna">
-              <span class="display">
-                <label class="display__label" for="razonSocial">Razón Social</label>
-                <input class="display__input" id="razonSocial" type="text">
-              </span>
-              <span class="display">
-                <label class="display__label" for="cuil">cuil</label>
-                <input class="display__input-invisible" id="output__cuil" type="number" readonly>
-              </span>
-            </div>
-            <div class="mostradores-1__columna">
-              <span class="display">
-                <label class="display__label" for="domicilio">Domicilio</label>
-                <input class="display__input" id="output__domicilio" type="text">
-              </span>
-              <span class="display">
-                <label class="display__label" for="cuit">CUIT</label>
-                <input class="display__input" id="output__cuit" type="number">
-              </span>
-            </div>
-          </article>
-          <hr class="linea">
-          <article class="mostradores-2">
-            <span class="display-2">
-              <label class="display-2__label" for="output__name">Nombre y Apellido</label>
-              <input class="display-2__input-invisible" id="output__name" type="text" readonly>
-              <input class="display-2__input-invisible" id="output__surname" type="text" readonly>
-            </span>
-            <span class="display-2">
-              <label class="display-2__label" for="output__dni">dni</label>
-              <input class="display-2__input-invisible" id="output__dni" type="number" readonly>
-            </span>
-            <span class="display-2">
-              <label class="display-2__label" for="sector">Sector</label>
-              <input class="display-2__input" id="sector" type="text">
-            </span>
-            <span class="display-2">
-              <label class="display-2__label" for="legajo">Legajo</label>
-              <input class="display-2__input" id="legajo" type="number">
-            </span>
-            <span class="display-2">
-              <label class="display-2__label" for="categoria">Categoria</label>
-              <select class="display-2__select" id="categoria" type="text">
-                <option value="0">Seleccionar</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-              </select>
-            </span>
-            <span class="display-2">
-              <label class="display-2__label" for="bancoDeposito">Banco Deposito</label>
-              <input class="display-2__input" id="bancoDeposito" type="text">
-            </span>
-            <span class="display-2">
-              <label class="display-2__label" for="output__fecha">Fecha</label>
-              <input class="display-2__input-invisible" id="output__fecha" type="datetime-local" readonly>
-            </span>
-            <span class="display-2">
-              <label class="display-2__label" for="tarea">Tarea</label>
-              <input class="display-2__input" id="tarea" type="text">
-            </span>
-            <span class="display-2">
-              <label class="display-2__label" for="output__fechaIngresoEmpresa">Año de Ingreso</label>
-              <input class="display-2__input-invisible" id="output__fechaIngresoEmpresa" type="number" readonly>
-            </span>
-            <span class="display-2">
-              <label class="display-2__label" for="output__sueldoBasico">Sueldo Básico</label>
-              <input class="display-2__input-invisible" id="output__sueldoBasico" type="number" readonly>
-            </span>
-          </article>
-          <hr class="linea">
-          <article class="mostradores-3">
-            <table class="tabla">
-              <tbody class="tabla__cuerpo">
-                <tr class="tabla__fila-header">
-                  <th class="tabla__columna-header">
-                    <p class="tabla__parrafo">Descripción</p>
-                  </th>
-                  <th class="tabla__columna-header">
-                    <p class="tabla__parrafo">Cantidad / Pocentaje</p>
-                  </th>
-                  <th class="tabla__columna-header">
-                    <p class="tabla__parrafo">Haberes sin Descuento</p>
-                  </th>
-                  <th class="tabla__columna-header">
-                    <p class="tabla__parrafo">Descuento</p>
-                  </th>
-                  <th class="tabla__columna-header">
-                    <p class="tabla__parrafo">Neto</p>
-                  </th>
-                </tr>
-                <tr class="tabla__fila">
-                  <td class="tabla__columna">
-                    <p class="tabla__parrafo">Jubilación</p>
-                  </td>
-                  <td class="tabla__columna"><input class="tabla__input-invisible" id="output__jubilacion" type="number"readonly></td>
-                  <td class="tabla__columna"></td>
-                  <td class="tabla__columna"><input class="tabla__input-invisible" id="output__jubilacionR" type="number" readonly></td>
-                  <td class="tabla__columna"></td>
-                </tr>
-                <tr class="tabla__fila">
-                  <td class="tabla__columna">
-                    <p class="tabla__parrafo">pami</p>
-                  </td>
-                  <td class="tabla__columna"><input class="tabla__input-invisible" id="output__pami" type="number" readonly></td>
-                  <td class="tabla__columna"></td>
-                  <td class="tabla__columna"><input class="tabla__input-invisible" id="output__pamiR" type="number" readonly></td>
-                  <td class="tabla__columna"></td>
-                </tr>
-                <tr class="tabla__fila">
-                  <td class="tabla__columna">
-                    <p class="tabla__parrafo">Obra Social</p>
-                  </td>
-                  <td class="tabla__columna">
-                    <input class="tabla__input-invisible" id="output__obraSocial" type="number" readonly>
-                  </td>
-                  <td class="tabla__columna">
-                  </td>
-                  <td class="tabla__columna">
-                    <input class="tabla__input-invisible" id="output__obraSocialR" type="number" readonly>
-                  </td>
-                  <td class="tabla__columna"></td>
-                </tr>
-                <tr class="tabla__fila">
-                  <td class="tabla__columna">
-                    <p class="tabla__parrafo">Sindicato</p>
-                  </td>
-                  <td class="tabla__columna">
-                    <input class="tabla__input-invisible" id="output__sindicato" type="number" readonly>
-                  </td>
-                  <td class="tabla__columna">
-                  </td>
-                  <td class="tabla__columna">
-                    <input class="tabla__input-invisible" id="output__sindicatoR" type="number" readonly>
-                  </td>
-                  <td class="tabla__columna"></td>
-                </tr>
-                <tr class="tabla__fila">
-                  <td class="tabla__columna">
-                    <p class="tabla__parrafo">Familiar a Cargo</p>
-                  </td>
-                  <td class="tabla__columna">
-                    <input class="tabla__input-invisible" id="output__familiarCargo" type="number" readonly>
-                  </td>
-                  <td class="tabla__columna">
-                  </td>
-                  <td class="tabla__columna">
-                    <input class="tabla__input-invisible" id="output__familiarCargoR" type="number" readonly>
-                  </td>
-                  <td class="tabla__columna"></td>
-                </tr>
-                <tr class="tabla__fila">
-                  <td class="tabla__columna">
-                    <p class="tabla__parrafo">Antig&uuml;edad</p>
-                  </td>
-                  <td class="tabla__columna">
-                    <input class="tabla__input-invisible" id="output__antiguedad" type="number" readonly>
-                  </td>
-                  <td class="tabla__columna">
-                    <input class="tabla__input-invisible" id="output__antiguedadR" type="number" readonly>
-                  </td>
-                  <td class="tabla__columna"></td>
-                  <td class="tabla__columna"></td>
-                </tr>
-                <tr class="tabla__fila">
-                  <td class="tabla__columna">
-                    <p class="tabla__parrafo">Titulo</p>
-                  </td>
-                  <td class="tabla__columna">
-                    <input class="tabla__input-invisible" id="output__tituloValor" type="number" readonly>
-                  </td>
-                  <td class="tabla__columna">
-                    <input class="tabla__input-invisible" id="output__tituloValorR" type="number" readonly>
-                  </td>
-                  <td class="tabla__columna"></td>
-                  <td class="tabla__columna"></td>
-                </tr>
-                <tr class="tabla__fila">
-                  <td class="tabla__columna">
-                    <p class="tabla__parrafo">Presentismo</p>
-                  </td>
-                  <td class="tabla__columna">
-                    <input class="tabla__input-invisible" id="output__presentismo" type="number" readonly>
-                  </td>
-                  <td class="tabla__columna">
-                    <input class="tabla__input-invisible" id="output__presentismoR" type="number" readonly>
-                  </td>
-                  <td class="tabla__columna"></td>
-                  <td class="tabla__columna"></td>
-                </tr>
-                <tr class="tabla__fila">
-                  <td class="tabla__columna">
-                    <p class="tabla__parrafo">Horas Extra al 50%</p>
-                  </td>
-                  <td class="tabla__columna">
-                    <input class="tabla__input-invisible" id="output__horasExtra50" type="number" readonly>
-                  </td>
-                  <td class="tabla__columna">
-                    <input class="tabla__input-invisible" id="output__horasExtra50R" type="number" readonly>
-                  </td>
-                  <td class="tabla__columna"></td>
-                  <td class="tabla__columna"></td>
-                </tr>
-                <tr class="tabla__fila">
-                  <td class="tabla__columna">
-                    <p class="tabla__parrafo">Horas Extra al 100%</p>
-                  </td>
-                  <td class="tabla__columna">
-                    <input class="tabla__input-invisible" id="output__horasExtra100" type="number" readonly>
-                  </td>
-                  <td class="tabla__columna">
-                    <input class="tabla__input-invisible" id="output__horasExtra100R" type="number" readonly>
-                  </td>
-                  <td class="tabla__columna"></td>
-                  <td class="tabla__columna"></td>
-                </tr>
-                <tr class="tabla__fila">
-                  <td class="tabla__columna">
-                    <p class="tabla__parrafo">Viaticos</p>
-                  </td>
-                  <td class="tabla__columna">
-                    <input class="tabla__input-invisible" id="output__viaticos" type="number" readonly>
-                  </td>
-                  <td class="tabla__columna">
-                    <input class="tabla__input-invisible" id="output__viaticosR" type="number" readonly>
-                  </td>
-                  <td class="tabla__columna"></td>
-                  <td class="tabla__columna"></td>
-                </tr>
-                <tr class="tabla__fila">
-                  <td class="tabla__columna">
-                    <p class="tabla__parrafo">Inasistencias</p>
-                  </td>
-                  <td class="tabla__columna">
-                    <input class="tabla__input-invisible" id="output__inasistencias" type="number" readonly>
-                  </td>
-                  <td class="tabla__columna">
-                  </td>
-                  <td class="tabla__columna">
-                    <input class="tabla__input-invisible" id="output__inasistenciasR" type="number" readonly>
-                  </td>
-                  <td class="tabla__columna"></td>
-                </tr>
-                <tr class="tabla__fila">
-                  <td class="tabla__columna">
-                    <p class="tabla__parrafo">Total</p>
-                  </td>
-                  <td class="tabla__columna">
-                    <input class="tabla__input-invisible" id="output__sueldoBruto" type="number" readonly>
-                  </td>
-                  <td class="tabla__columna">
-                    <input class="tabla__input-invisible" id="output__horasDia" type="number" readonly>
-                  </td>
-                  <td class="tabla__columna">
-                    <input class="tabla__input-invisible" id="output__aportes" type="number" readonly>
-                  </td>
-                  <td class="tabla__columna">
-                    <input class="tabla__input-invisible" id="output__sueldoNetoCobrar" type="number" readonly>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </article>
+        <div class="contenedor__aside" id="aside__right">
         </div>
-      </section>
     </div>
-    <div class="contenedor__aside">
-      <aside class="redes sombra">
-        <p class="redes__titulo">Seguinos en</p>
-        <ul class="redes__lista">
-          <li class="redes__red">
-            <div class="enlace">
-              <a class="enlace__enlace" target="_blank" href="https://www.facebook.com/profile.php?id=100074691094643">
-                <img class="enlace__icono" alt="Facebook.ico" src="../img/Facebook.ico">
-                <h4 class="enlace__tag">Facebook</h4>
-              </a>
-            </div>
-          </li>
-          <li class="redes__red">
-            <div class="enlace">
-              <a class="enlace__enlace" target="_blank" href="https://www.instagram.com/liquidar_sueldos?utm_medium">
-                <img class="enlace__icono" alt="Instagram.png" src="../img/Instagram.png">
-                <h4 class="enlace__tag">@liquidar_sueldos</h4>
-              </a>
-            </div>
-          </li>
-          <li class="redes__red">
-            <div class="enlace">
-              <a class="enlace__enlace" target="_blank" href="https://twitter.com/LiquidarSueldos?">
-                <img class="enlace__icono" alt="Twitter.jpg" src="../img/Twitter.png">
-                <h4 class="enlace__tag">Twitter</h4>
-              </a>
-            </div>
-          </li>
-        </ul>
-      </aside>
-    </div>
-  </div>
-  <footer class="footer">
-    <p class="footer__copyright">Copyright 2021 - Todos los derechos reservados</p>
-    <p class="footer__parrafo">Página Web producida por medio de software libre.</p>
-    <a class="footer__enlace" href="Nosotros.html">Nosotros</a>
-    <a class="footer__enlace" target="_blank" href="https://mail.google.com/mail/u/0/?tf=cm&fs=1&source=mailto&to=liquidarsueldos@gmail.com">Contacto</a>
-    <a class="footer__enlace" target="_blank" href="https://github.com/Jeremias0901/liquidador-de-sueldos">GitHub</a>
-  </footer>
-  <script src="js/calcular.js"></script>
+    <footer></footer>
+
+    <script src="js/calcular.js"></script>
 </body>
 </html>
