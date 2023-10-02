@@ -1,0 +1,8 @@
+[
+  {"path": "/componentsHTML/head", "tag": "head"},
+  {"path": "/componentsHTML/nav", "tag": "nav"},
+  {"path": "/componentsHTML/header", "tag": "header"},
+  {"path": "/componentsHTML/footer", "tag": "footer"},
+  {"path": "/componentsHTML/asideLeft", "tag": "#aside__left"},
+  {"path": "/componentsHTML/asideRight", "tag": "#aside__right"}
+]
