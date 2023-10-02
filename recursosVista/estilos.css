@@ -44,19 +44,20 @@ body::-webkit-scrollbar-thumb {
   color: var(--colorTerciario);
 }
 
-.header {
-  display: grid;
-  border-radius: 30px 30px 0px 0px;
-	grid-template-rows: auto auto;
-	gap: 20px;
-	width: auto;
-	height: auto;
+header {
+    display: grid;
+    border-radius: 30px 30px 0px 0px;
+    grid-template-rows: auto auto;
+    gap: 20px;
+    margin-top: 20px;
 }
 
 .header__contenido {
 	display: flex;
 	flex-direction: row;
 	align-items: center;
+    margin: 0px 20px;
+    color: whitesmoke;
 }
 
 .preview {
@@ -99,7 +100,7 @@ body::-webkit-scrollbar-thumb {
 	display: flex;
 	flex-direction: row;
 	align-items: center;
-	gap: 30px;
+	gap: 100px;
 	margin: auto;
 }
 
@@ -198,7 +199,7 @@ body::-webkit-scrollbar-thumb {
 	padding-left: 10px;
 }
 
-.aside {
+aside {
 	margin-top: 10px;
 	margin-left: 10px;
 	width: 225px;
@@ -304,18 +305,21 @@ body::-webkit-scrollbar-thumb {
 	border-radius: 10px;
 }
 
-.footer {
+footer {
 	display: flex;
 	justify-content: center;
-	align-items: center;
+    justify-items: center;
+    align-content: center;
+    align-items: baseline;
 	width: 100%;
 	height: auto;
 	padding: 15px;
 	background: #0d1d2c;
 	font-family: "Courier New";
 	border-top: solid;
-	border: var(--colorPrimario) solid;
+	border: black solid;
 	gap: 20px;
+    margin-top: 20px;
 }
 
 .footer__parrafo {
@@ -337,4 +341,45 @@ body::-webkit-scrollbar-thumb {
 	border: var(--colorPrimario) solid 2px;
 	color: var(--colorTerciario);
 	text-decoration: none;
+}
+
+.contenido-group{
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 50px;
+    background-color: #000091;
+}
+
+.card-group{
+    background-color: #1717ff;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+nav{
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    justify-content: left;
+    padding: 20px;
+
+    background-color: #000010;
+    color: black;
+}
+
+nav > a{
+    text-decoration: none;
+    color: #0256ff;
+}
+
+nav > a:hover{
+    color: #000091;
+}
+
+a{
+    text-decoration: none;
+}
+
+.content-bordered{
+    border-radius: 10px;
 }
