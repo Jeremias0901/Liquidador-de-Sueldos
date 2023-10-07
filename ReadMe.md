@@ -1,4 +1,4 @@
-## Calculadora de Ganancias
+# Calculadora de Ganancias
 
 > [Esta página web](https://liquidarsueldos.000webhostapp.com/Liquidar) esta destinada a **brindar servicios de cálculo de liquidación de sueldo, aguinaldo e indemnización por despido a trabajadores**.
 > Este proyecto viene impulsado por el taller de **Laboratorio de Aplicaciones** de la **Escuela de Educación Secundaria Técnica N°5**.

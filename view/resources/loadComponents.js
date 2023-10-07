@@ -4,7 +4,7 @@ const includeComp = ({path, tag}) => {
     .then(res => document.querySelector(tag).innerHTML += res);
 }
 
-fetch('/recursosVista/componentes.json')
+fetch('/view/resources/components.json')
   .then(res => res.json())
   .then(components => {
     components.forEach(comp => includeComp(comp));
