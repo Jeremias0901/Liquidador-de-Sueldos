@@ -73,10 +73,10 @@
             const loadMeses = (sem) => {
                 const meses = [
                     ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio'],
-                    ['Julio', 'Agost', 'Septiembre', 'Octubre', 'Nobiembre', 'Diciembre']
+                    ['Julio', 'Agosto', 'Septiembre', 'Octubre', 'Nobiembre', 'Diciembre']
                 ];
 
-                for(let i = 0; i < ctrlSem.length; i++){
+                for(let i = 0; i < meses[sem].length; i++){
                     ctrlSem[i].children[0].innerHTML = meses[sem][i]; // Label
                     ctrlSem[i].children[0].setAttribute('for', meses[sem][i]); // Label
                     ctrlSem[i].children[1].innerHTML = meses[sem][i]; // Input
@@ -84,21 +84,21 @@
                 }
             }
 
-            if(!(inp1sem.checked || inp2sem.checked)) {
+            if((inp1sem.checked || inp2sem.checked)) {
                 document.querySelector('.semestres__formulario').style.display = 'flex';
             }
 
-            loadMeses(inp1sem.checked ? 1 : 0);
+            loadMeses(inp1sem.checked ? 0 : 1);
         }
 
-        buttons[0].addEventListener('click', () => {
+        document.querySelector('#semestres__button-1sem').addEventListener('click', () => {
             buttons[0].classList.add('semestres__button-activado');
             buttons[1].classList.remove('semestres__button-activado');
 
             loadForm();
         })
 
-        buttons[1].addEventListener('click', () => {
+        document.querySelector('#semestres__button-2sem').addEventListener('click', () => {
             buttons[1].classList.add('semestres__button-activado');
             buttons[0].classList.remove('semestres__button-activado');
             loadForm();
