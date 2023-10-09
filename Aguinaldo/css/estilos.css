@@ -2,12 +2,47 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
 }
-.formulario_desactivado {
+.semestres__formulario{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin: 20px;
+    border-radius: 10px;
+    padding: 15px;
+    background: #091574;
+}
+
+.semestres__control input{
+    line-height: 20px;
+    font-family: Verdana;
+    border: black solid 1px;
+    border-radius: 5px;
+    margin-top: 2px;
+    padding: 5px;
+    width: 120px;
+}
+
+.semestres__control input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+.semestres__control input:focus {
+    outline: none;
+    border-color: blue;
+    box-shadow: blue 0px 0px 5px;
+}
+
+.semestres__control{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.semestres__formulario-desactivado {
     display: none;
 }
-.formulario_activado {
-    margin-top: 30px;
-    display: block;
+.semestres__resultado{
+    display: none;
 }
 .ele_sem {
     width: 500px;
@@ -18,43 +53,25 @@
     border-color: black;
     margin-top: 80px;
 }
-.input_boton {
-    font-size: 25px;
-    height: 50px;
+.semestres__button {
     width: 200px;
+    height: 50px;
+    font-size: 27px;
+    padding: 5px;
     background: #0094ff;
     border-style: solid;
     border-color: black;
     border-radius: 5px;
     cursor: pointer;
 }
-.input_boton:hover {
-    width: 200px;
-    height: 50px;
-    font-size: 27px;
-    padding: 5px;
-    border-style: solid;
-    border-radius: 5px;
+.semestres__button:hover {
     background: #aac9fc;
 }
-.input_boton_activado:hover {
-    width: 200px;
-    height: 50px;
-    font-size: 27px;
-    padding: 5px;
-    border-style: solid;
-    border-radius: 5px;
-    background: #aac9fc;
-}
-.input_boton_activado {
-    width: 200px;
-    height: 50px;
-    font-size: 27px;
-    padding: 5px;
-    border-style: solid;
-    border-color: black;
-    border-radius: 5px;
+.semestres__button-activado {
     background: #003cff;
+}
+.semestres__button-activado:hover {
+    background: #aac9fc;
 }
 .cl_input_semestre_1_activado label {
     margin-top: 10px;
