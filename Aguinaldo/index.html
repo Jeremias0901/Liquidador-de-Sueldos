@@ -51,10 +51,10 @@
                         <input class="semestres__input" id="" placeholder="Sueldo Neto" type="number" required />
                     </span>
                 </form>
-                <span class="semestres__control">
-                    <label class="semestres__label" for="resultado__label"> Aguinaldo </label>
-                    <input class="semestres__input" id="resultado__value" readonly/>
-                </span>
+            </div>
+            <div class="resultado semestres__control sombra" style="display: none;">
+                <label class="resultado__label" for="resultado__label"> Aguinaldo </label>
+                <input class="resultado__input" id="resultado__input" readonly/>
             </div>
         </div>
 
@@ -63,8 +63,8 @@
     </div>
 
     <script>
+        const form = document.querySelector('.semestres__formulario');
         const loadForm = () => {
-            const form = document.querySelector('.semestres__formulario');
             form.style.display = 'flex';
 
             const loadSemestre = sem => {
@@ -75,11 +75,11 @@
                 const semestre = semestresData[sem];
 
                 semestre.forEach((mes, i) => {
-                    const label = form.children[i].getElementsByTagName('label')[0];
+                    const [label] = form.children[i].getElementsByTagName('label');
                     label.innerHTML = mes;
                     label.setAttribute('for', mes);
 
-                    const input = form.children[i].getElementsByTagName('input')[0];
+                    const [input] = form.children[i].getElementsByTagName('input');
                     input.id = mes;
                 })
             }
@@ -95,14 +95,44 @@
         const buttons = document.querySelectorAll('.semestres__button');
 
         document.querySelector('#semestres__button-1sem').addEventListener('click', e => {
-            activarBtn(buttons[1], buttons[0])
+            activarBtn(buttons[1], buttons[0]);
             loadForm();
         })
 
         document.querySelector('#semestres__button-2sem').addEventListener('click', () => {
-            activarBtn(buttons[0], buttons[1])
+            activarBtn(buttons[0], buttons[1]);
             loadForm();
         })
+
+        let validated;
+        const validate = () => {
+            const expression = /^([1-9]{1}[0-9]{0,9})(\.[1-9]{2}|)$/;
+            let input;
+
+            validated = true;
+            for (let i = 0; i < form.children.length; i++) {
+                const span = form.children[i];
+                input = span.getElementsByTagName('input')[0].value;
+                if(!expression.test(input)){
+                    validated = false;
+                    break;
+                }
+            }
+
+            return validated;
+        }
+
+        const inputs = document.querySelectorAll('.semestres__input');
+
+        for (let i = 0; i < inputs.length; i++) {
+            const input = inputs[i];
+            input.addEventListener('keyup', () => {
+                if(validate())
+                    document.querySelector('.resultado').style.display = 'flex';
+                else
+                    document.querySelector('.resultado').style.display = 'none';
+            })
+        }
     </script>
 
     <footer></footer>

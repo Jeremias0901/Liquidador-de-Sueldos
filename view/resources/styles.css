@@ -350,6 +350,12 @@ footer {
     background-color: #000091;
 }
 
+.contenedor__contenido{
+    display: grid;
+    justify-items: center;
+    gap: 20px;
+}
+
 .card-group {
     background-color: #1717ff;
     padding: 10px;
