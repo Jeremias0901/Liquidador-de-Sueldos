@@ -16,12 +16,12 @@
         <div class="contenedor__contenido">
             <div class="semestres">
                 <span>
-                    <label class="semestres__button" for="semestres__button-1sem">1era cuota</label>
-                    <input id="semestres__button-1sem" name="semestre" type="radio" hidden />
+                    <label class="semestres__button sombra" id="semestres__label-1sem" for="semestres__input-1sem">1era cuota</label>
+                    <input id="semestres__input-1sem" name="semestre" type="radio" hidden />
                 </span>
                 <span>
-                    <label class="semestres__button" for="semestres__button-2sem">2da cuota</label>
-                    <input id="semestres__button-2sem" name="semestre" type="radio" hidden />
+                    <label class="semestres__button sombra" id="semestres__label-2sem" for="semestres__input-2sem">2da cuota</label>
+                    <input id="semestres__input-2sem" name="semestre" type="radio" hidden />
                 </span>
             </div>
             <div>
@@ -53,7 +53,7 @@
                 </form>
             </div>
             <div class="resultado semestres__control sombra" style="display: none;">
-                <label class="resultado__label" for="resultado__label"> Aguinaldo </label>
+                <label class="resultado__label" for="resultado__input"> Aguinaldo </label>
                 <input class="resultado__input" id="resultado__input" readonly/>
             </div>
         </div>
@@ -63,10 +63,9 @@
     </div>
 
     <script>
-        const form = document.querySelector('.semestres__formulario');
         const loadForm = () => {
-            form.style.display = 'flex';
-
+            const form = document.querySelector('.semestres__formulario');
+            const inpSem1 = document.querySelector('#semestres__input-1sem');
             const loadSemestre = sem => {
                 const semestresData = [
                     ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio'],
@@ -84,55 +83,57 @@
                 })
             }
 
-            loadSemestre(document.querySelector('#semestres__button-1sem').checked ? 0 : 1);
+            form.style.display = 'flex';
+            loadSemestre(inpSem1.checked ? 0 : 1);
+
+            autoComplete()
+            procesarAguinaldo()
         }
 
-        const activarBtn = (btnAct, btnDst) => {
-            btnAct.classList.add('semestres__button-activado');
-            btnDst.classList.remove('semestres__button-activado');
-        }
+        document.querySelector('#semestres__input-1sem').addEventListener('click', loadForm)
+        document.querySelector('#semestres__input-2sem').addEventListener('click', loadForm)
 
-        const buttons = document.querySelectorAll('.semestres__button');
-
-        document.querySelector('#semestres__button-1sem').addEventListener('click', e => {
-            activarBtn(buttons[1], buttons[0]);
-            loadForm();
-        })
-
-        document.querySelector('#semestres__button-2sem').addEventListener('click', () => {
-            activarBtn(buttons[0], buttons[1]);
-            loadForm();
-        })
-
-        let validated;
         const validate = () => {
-            const expression = /^([1-9]{1}[0-9]{0,9})(\.[1-9]{2}|)$/;
-            let input;
+            const expression = /^([1-9]{1}[0-9]{0,9})(\.[0-9]{1,2}|)$/;
+            const ctrls = [...document.querySelector('.semestres__formulario').children];
+            let validated = true;
+            ctrls.forEach(span => {
+                const [input] = span.getElementsByTagName('input');
 
-            validated = true;
-            for (let i = 0; i < form.children.length; i++) {
-                const span = form.children[i];
-                input = span.getElementsByTagName('input')[0].value;
-                if(!expression.test(input)){
+                if(!expression.test(input.value)){
                     validated = false;
-                    break;
+                    return;
                 }
-            }
+            })
 
             return validated;
         }
 
-        const inputs = document.querySelectorAll('.semestres__input');
 
-        for (let i = 0; i < inputs.length; i++) {
-            const input = inputs[i];
-            input.addEventListener('keyup', () => {
-                if(validate())
-                    document.querySelector('.resultado').style.display = 'flex';
-                else
-                    document.querySelector('.resultado').style.display = 'none';
-            })
+        const autoComplete = () => {
+            const form = document.querySelector('.semestres__formulario');
+            const min = 1, max = 9999999999;
+
+            for (let i = 0; i < form.children.length; i++) {
+                form.children[i].children[1].value = ((Math.random() * (max - min)) + min).toFixed(2);
+            }
         }
+
+        const inputs = [...document.querySelectorAll('.semestres__input')];
+
+        const procesarAguinaldo = () => {
+            if(validate()){
+                document.querySelector('.resultado').style.display = 'flex';
+
+                inputs.forEach(inp => inp.style.color = "black")
+                const sueldos = inputs.map(inp => parseFloat(inp.value));
+                document.querySelector('#resultado__input').value = calcular(sueldos);
+            }
+            else
+                document.querySelector('.resultado').style.display = 'none';
+        }
+
+        inputs.forEach(input => input.addEventListener('keyup', procesarAguinaldo));
     </script>
 
     <footer></footer>
