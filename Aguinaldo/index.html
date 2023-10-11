@@ -54,7 +54,7 @@
             </div>
             <div class="resultado semestres__control sombra" style="display: none;">
                 <label class="resultado__label" for="resultado__input"> Aguinaldo </label>
-                <input class="resultado__input" id="resultado__input" readonly/>
+                <input class="resultado__input" id="resultado__input" style="width: 130px" readonly/>
             </div>
         </div>
 
@@ -67,25 +67,28 @@
             const form = document.querySelector('.semestres__formulario');
             const inpSem1 = document.querySelector('#semestres__input-1sem');
             const loadSemestre = sem => {
+                const spans = [...form.children].map(span => [
+                    span.getElementsByTagName('label')[0],
+                    span.getElementsByTagName('input')[0]
+                ])
                 const semestresData = [
                     ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio'],
                     ['Julio', 'Agosto', 'Septiembre', 'Octubre', 'Nobiembre', 'Diciembre']
                 ];
                 const semestre = semestresData[sem];
 
-                semestre.forEach((mes, i) => {
-                    const [label] = form.children[i].getElementsByTagName('label');
+                const labels = spans.map(span => span[0]);
+                labels.forEach((label, index) => {
+                    const mes = semestre[index];
                     label.innerHTML = mes;
                     label.setAttribute('for', mes);
-
-                    const [input] = form.children[i].getElementsByTagName('input');
-                    input.id = mes;
                 })
+                const inputs = spans.map(span => span[1]);
+                inputs.forEach((input, index) => input.id = semestre[index]);
             }
 
             form.style.display = 'flex';
             loadSemestre(inpSem1.checked ? 0 : 1);
-
             autoComplete()
             procesarAguinaldo()
         }
@@ -96,19 +99,28 @@
         const validate = () => {
             const expression = /^([1-9]{1}[0-9]{0,9})(\.[0-9]{1,2}|)$/;
             const ctrls = [...document.querySelector('.semestres__formulario').children];
-            let validated = true;
+            let validated = false;
+
             ctrls.forEach(span => {
                 const [input] = span.getElementsByTagName('input');
 
                 if(!expression.test(input.value)){
-                    validated = false;
-                    return;
+                    // invalido
+                    validated = input.id;
+                    input.style.color = 'red';
+                } else {
+                    // valido
+                    input.style.color = 'black';
+                    document.querySelector('.resultado').style.display = 'flex';
                 }
             })
 
-            return validated;
-        }
+            if(validated){
+                document.querySelector('.resultado').style.display = 'none';
+            }
 
+            return !validated;
+        }
 
         const autoComplete = () => {
             const form = document.querySelector('.semestres__formulario');
@@ -123,14 +135,9 @@
 
         const procesarAguinaldo = () => {
             if(validate()){
-                document.querySelector('.resultado').style.display = 'flex';
-
-                inputs.forEach(inp => inp.style.color = "black")
                 const sueldos = inputs.map(inp => parseFloat(inp.value));
                 document.querySelector('#resultado__input').value = calcular(sueldos);
             }
-            else
-                document.querySelector('.resultado').style.display = 'none';
         }
 
         inputs.forEach(input => input.addEventListener('keyup', procesarAguinaldo));
