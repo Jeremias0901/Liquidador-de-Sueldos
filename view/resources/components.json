@@ -4,5 +4,6 @@
   {"path": "/view/componentsHTML/header", "tag": "header"},
   {"path": "/view/componentsHTML/footer", "tag": "footer"},
   {"path": "/view/componentsHTML/asideLeft", "tag": "#aside__left"},
-  {"path": "/view/componentsHTML/asideRight", "tag": "#aside__right"}
+  {"path": "/view/componentsHTML/asideRight", "tag": "#aside__right"},
+  {"path": "/view/componentsHTML/signDeveloping", "tag": ".sign__developing"}
 ]
