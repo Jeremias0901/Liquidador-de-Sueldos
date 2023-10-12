@@ -1,9 +1,9 @@
 [
-  {"path": "calculadora-de-ganancias/view/componentsHTML/head", "tag": "head"},
-  {"path": "calculadora-de-ganancias/view/componentsHTML/nav", "tag": "nav"},
-  {"path": "calculadora-de-ganancias/view/componentsHTML/header", "tag": "header"},
-  {"path": "calculadora-de-ganancias/view/componentsHTML/footer", "tag": "footer"},
-  {"path": "calculadora-de-ganancias/view/componentsHTML/asideLeft", "tag": "#aside__left"},
-  {"path": "calculadora-de-ganancias/view/componentsHTML/asideRight", "tag": "#aside__right"},
-  {"path": "calculadora-de-ganancias/view/componentsHTML/signDeveloping", "tag": ".sign__developing"}
+  {"path": "https://jeremias-cuello.github.io/calculadora-de-ganancias/calculadora-de-ganancias/view/componentsHTML/head", "tag": "head"},
+  {"path": "https://jeremias-cuello.github.io/calculadora-de-ganancias/calculadora-de-ganancias/view/componentsHTML/nav", "tag": "nav"},
+  {"path": "https://jeremias-cuello.github.io/calculadora-de-ganancias/calculadora-de-ganancias/view/componentsHTML/header", "tag": "header"},
+  {"path": "https://jeremias-cuello.github.io/calculadora-de-ganancias/calculadora-de-ganancias/view/componentsHTML/footer", "tag": "footer"},
+  {"path": "https://jeremias-cuello.github.io/calculadora-de-ganancias/calculadora-de-ganancias/view/componentsHTML/asideLeft", "tag": "#aside__left"},
+  {"path": "https://jeremias-cuello.github.io/calculadora-de-ganancias/calculadora-de-ganancias/view/componentsHTML/asideRight", "tag": "#aside__right"},
+  {"path": "https://jeremias-cuello.github.io/calculadora-de-ganancias/calculadora-de-ganancias/view/componentsHTML/signDeveloping", "tag": ".sign__developing"}
 ]
