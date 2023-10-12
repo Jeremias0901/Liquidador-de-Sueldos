@@ -12,7 +12,7 @@ const includeComp = ({path, tag}) => {
     })
 }
 
-fetch('/view/resources/components.json')
+fetch('calculadora-de-ganancias/view/resources/components.json')
   .then(res => res.json())
   .then(components => {
     components.forEach(comp => includeComp(comp));
