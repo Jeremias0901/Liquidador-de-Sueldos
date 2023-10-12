@@ -1,0 +1,59 @@
+<div class="header__contenido">
+    <div class="preview">
+        <h1 class="preview__title">Calculadora de Ganancias</h1>
+        <div class="ofrecimientos">
+            <ul class="ofrecimientos__lista">
+                <li class="ofrecimientos__elemento">Calcula tu Sueldo</li>
+            </ul>
+            <ul class="ofrecimientos__lista">
+                <li class="ofrecimientos__elemento">Calcula tu indemnización</li>
+                <li class="ofrecimientos__elemento">Calcula tu Aguinaldo</li>
+            </ul>
+        </div>
+    </div>
+    <div class="logos">
+        <span class="laci">
+            <p class="laci__letra-resaltante">L</p>
+            <p class="laci__letra-normal">A</p>
+            <p class="laci__letra-normal">I</p>
+        </span>
+        <a style="display: grid; color: black; font-size: x-small; justify-items: center;" href="https://www.flaticon.es/iconos-gratis/presupuesto" title="presupuesto iconos" target="__blank">
+            <img class="logos__calculadora" src="https://jeremiascuello.000webhostapp.com/CDN/calculadora-de-ganancias/img/calculadora.png" alt="liquidador-de-sueldos" title="created by Freepik - Flaticon">
+            Presupuesto iconos creados por Freepik - Flaticon
+        </a>
+    </div>
+
+    <script>
+        const array = document.querySelector('.laci').children;
+        const states = ['resaltante', 'normal'];
+        const indexes = [[0, 1], [1, 2], [2, 0]];
+
+        const change = element => {
+            const clase = element.classList[0];
+            element.classList.remove(clase);
+            element.classList.add(clase ? `laci__letra-${states[0]}` : `laci__letra-${states[1]}`);
+        };
+
+        const toggle = n => {
+            let after;
+
+            for (let i = 0; i < array.length; i++) {
+                if(array[i][0] === n){
+                    after = array[i][1];
+                    break;
+                }
+            }
+
+            change(array[n]);
+            change(array[after]);
+        }
+
+        setInterval(() => {
+            for (let i = 0; i < array.length; i++) {
+                if(array[i].classList[0] === states[0]){
+                    toggle(i);
+                }
+            }
+        }, 500);
+    </script>
+</div>

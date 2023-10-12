@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <script src="../view/resources/loadComponents.js"></script>
+    <script src="js/index.js"></script>
+    <title>Aguinaldo</title>
+</head>
+<body>
+    <header></header>
+    <nav></nav>
+
+    <div class="contenedor">
+        <div class="contenedor__aside" id="aside__left">
+        </div>
+
+        <div class="contenedor__contenido">
+            <div class="semestres">
+                <span>
+                    <label class="semestres__button sombra" id="semestres__label-1sem" for="semestres__input-1sem">1era cuota</label>
+                    <input id="semestres__input-1sem" name="semestre" type="radio" hidden />
+                </span>
+                <span>
+                    <label class="semestres__button sombra" id="semestres__label-2sem" for="semestres__input-2sem">2da cuota</label>
+                    <input id="semestres__input-2sem" name="semestre" type="radio" hidden />
+                </span>
+            </div>
+            <div>
+                <form class="semestres__formulario sombra contenedor3d" style="display: none;">
+                    <span class="semestres__control">
+                        <label class="semestres__label" for=""></label>
+                        <input class="semestres__input" id="" placeholder="Sueldo Neto" type="number" required />
+                    </span>
+                    <span class="semestres__control">
+                        <label class="semestres__label" for=""></label>
+                        <input class="semestres__input" id="" placeholder="Sueldo Neto" type="number" required />
+                    </span>
+                    <span class="semestres__control">
+                        <label class="semestres__label" for=""></label>
+                        <input class="semestres__input" id="" placeholder="Sueldo Neto" type="number" required />
+                    </span>
+                    <span class="semestres__control">
+                        <label class="semestres__label" for=""></label>
+                        <input class="semestres__input" id="" placeholder="Sueldo Neto" type="number" required />
+                    </span>
+                    <span class="semestres__control">
+                        <label class="semestres__label" for=""></label>
+                        <input class="semestres__input" id="" placeholder="Sueldo Neto" type="number" required />
+                    </span>
+                    <span class="semestres__control">
+                        <label class="semestres__label" for=""></label>
+                        <input class="semestres__input" id="" placeholder="Sueldo Neto" type="number" required />
+                    </span>
+                </form>
+            </div>
+            <div class="resultado semestres__control sombra" style="display: none;">
+                <label class="resultado__label" for="resultado__input"> Aguinaldo </label>
+                <input class="resultado__input" id="resultado__input" style="width: 130px" readonly/>
+            </div>
+        </div>
+
+        <div class="contenedor__aside" id="aside__right">
+        </div>
+    </div>
+
+    <script>
+        const loadForm = () => {
+            const form = document.querySelector('.semestres__formulario');
+            const inpSem1 = document.querySelector('#semestres__input-1sem');
+            const loadSemestre = sem => {
+                const spans = [...form.children].map(span => [
+                    span.getElementsByTagName('label')[0],
+                    span.getElementsByTagName('input')[0]
+                ])
+                const semestresData = [
+                    ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio'],
+                    ['Julio', 'Agosto', 'Septiembre', 'Octubre', 'Nobiembre', 'Diciembre']
+                ];
+                const semestre = semestresData[sem];
+
+                const labels = spans.map(span => span[0]);
+                labels.forEach((label, index) => {
+                    const mes = semestre[index];
+                    label.innerHTML = mes;
+                    label.setAttribute('for', mes);
+                })
+                const inputs = spans.map(span => span[1]);
+                inputs.forEach((input, index) => input.id = semestre[index]);
+            }
+
+            form.style.display = 'flex';
+            loadSemestre(inpSem1.checked ? 0 : 1);
+        }
+
+        document.querySelector('#semestres__input-1sem').addEventListener('click', loadForm)
+        document.querySelector('#semestres__input-2sem').addEventListener('click', loadForm)
+
+        const validate = () => {
+            const expression = /^([1-9]{1}[0-9]{0,9})(\.[0-9]{1,2}|)$/;
+            const ctrls = [...document.querySelector('.semestres__formulario').children];
+            let validated = false;
+
+            ctrls.forEach(span => {
+                const [input] = span.getElementsByTagName('input');
+
+                if(!expression.test(input.value)){
+                    // invalido
+                    validated = input.id;
+                    input.style.color = 'red';
+                } else {
+                    // valido
+                    input.style.color = 'black';
+                    document.querySelector('.resultado').style.display = 'flex';
+                }
+            })
+
+            if(validated){
+                document.querySelector('.resultado').style.display = 'none';
+            }
+
+            return !validated;
+        }
+
+        const inputs = [...document.querySelectorAll('.semestres__input')];
+
+        const procesarAguinaldo = () => {
+            if(validate()){
+                const sueldos = inputs.map(inp => parseFloat(inp.value));
+                document.querySelector('#resultado__input').value = calcular(sueldos);
+            }
+        }
+
+        inputs.forEach(input => input.addEventListener('keyup', procesarAguinaldo));
+    </script>
+
+    <footer></footer>
+</body>
+</html>

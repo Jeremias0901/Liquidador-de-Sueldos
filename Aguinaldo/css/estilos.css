@@ -1,0 +1,82 @@
+.contenido_01 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+.semestres__formulario{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    border-radius: 10px;
+    padding: 15px;
+    background: #091574;
+}
+
+.semestres__control input{
+    line-height: 20px;
+    font-family: Verdana;
+    border: black solid 1px;
+    border-radius: 5px;
+    margin-top: 2px;
+    padding: 5px;
+    width: 120px;
+}
+
+.semestres__control input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+.semestres__control input:focus {
+    outline: none;
+    border-color: blue;
+    box-shadow: blue 0px 0px 5px;
+}
+
+.resultado{
+    gap: 15px;
+    border-radius: 10px;
+    padding: 15px;
+    border: solid black 1px;
+    background: #091574;
+}
+.semestres__control{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.semestres__formulario-desactivado {
+    display: none;
+}
+.semestres__resultado{
+    display: none;
+}
+.ele_sem {
+    width: 500px;
+    height: 100px;
+    background: white;
+    border-radius: 10px;
+    border-style: solid;
+    border-color: black;
+    margin-top: 80px;
+}
+.semestres__button {
+    width: 200px;
+    height: 50px;
+    font-size: 27px;
+    padding: 5px;
+    background: #0094ff;
+    border-style: solid;
+    border-color: black;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.semestres__button:hover {
+    background: #aac9fc;
+}
+.semestres__button-activado {
+    background: #003cff;
+}
+.semestres__button-activado:hover {
+    background: #aac9fc;
+}
